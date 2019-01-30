@@ -12,6 +12,8 @@
 		860F68E2217AA40E00627AB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 860F68E1217AA40E00627AB4 /* Assets.xcassets */; };
 		860F68E5217AA40E00627AB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 860F68E3217AA40E00627AB4 /* LaunchScreen.storyboard */; };
 		860F68ED217AB7EF00627AB4 /* SearchQuranByVoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860F68EC217AB7EF00627AB4 /* SearchQuranByVoiceViewController.swift */; };
+		8656014022024D9C00A721F5 /* numberOfVerses.json in Resources */ = {isa = PBXBuildFile; fileRef = 8656013F22024D9C00A721F5 /* numberOfVerses.json */; };
+		8656014222024DAA00A721F5 /* suraNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 8656014122024DAA00A721F5 /* suraNames.json */; };
 		C6298DEE21FB45AA00F49575 /* suarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6298DED21FB45AA00F49575 /* suarTableViewController.swift */; };
 		C6298DF021FB469100F49575 /* selectVersesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6298DEF21FB469100F49575 /* selectVersesViewController.swift */; };
 		E215839621FAE753008104A7 /* new.csv in Resources */ = {isa = PBXBuildFile; fileRef = E215839521FAE753008104A7 /* new.csv */; };
@@ -25,6 +27,8 @@
 		860F68E4217AA40E00627AB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		860F68E6217AA40E00627AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		860F68EC217AB7EF00627AB4 /* SearchQuranByVoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuranByVoiceViewController.swift; sourceTree = "<group>"; };
+		8656013F22024D9C00A721F5 /* numberOfVerses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = numberOfVerses.json; sourceTree = "<group>"; };
+		8656014122024DAA00A721F5 /* suraNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = suraNames.json; sourceTree = "<group>"; };
 		C6298DED21FB45AA00F49575 /* suarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suarTableViewController.swift; sourceTree = "<group>"; };
 		C6298DEF21FB469100F49575 /* selectVersesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectVersesViewController.swift; sourceTree = "<group>"; };
 		E215839521FAE753008104A7 /* new.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = new.csv; sourceTree = "<group>"; };
@@ -69,8 +73,18 @@
 				E215839521FAE753008104A7 /* new.csv */,
 				860F68E6217AA40E00627AB4 /* Info.plist */,
 				C6298DEF21FB469100F49575 /* selectVersesViewController.swift */,
+				8656013E22024D0300A721F5 /* Resources */,
 			);
 			path = Quran;
+			sourceTree = "<group>";
+		};
+		8656013E22024D0300A721F5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8656013F22024D9C00A721F5 /* numberOfVerses.json */,
+				8656014122024DAA00A721F5 /* suraNames.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				860F68E5217AA40E00627AB4 /* LaunchScreen.storyboard in Resources */,
+				8656014222024DAA00A721F5 /* suraNames.json in Resources */,
+				8656014022024D9C00A721F5 /* numberOfVerses.json in Resources */,
 				860F68E2217AA40E00627AB4 /* Assets.xcassets in Resources */,
 				860F68E0217AA40E00627AB4 /* Main.storyboard in Resources */,
 				E215839621FAE753008104A7 /* new.csv in Resources */,

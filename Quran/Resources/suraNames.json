@@ -1,0 +1,344 @@
+[
+  {
+    "SuraName": "الفاتحة"
+  },
+  {
+    "SuraName": "البقرة"
+  },
+  {
+    "SuraName": "آل عمران"
+  },
+  {
+    "SuraName": "النساء"
+  },
+  {
+    "SuraName": "المائدة"
+  },
+  {
+    "SuraName": "الأنعام"
+  },
+  {
+    "SuraName": "الأعراف"
+  },
+  {
+    "SuraName": "الأنفال"
+  },
+  {
+    "SuraName": "التوبة"
+  },
+  {
+    "SuraName": "يونس"
+  },
+  {
+    "SuraName": "هود"
+  },
+  {
+    "SuraName": "يوسف"
+  },
+  {
+    "SuraName": "الرعد"
+  },
+  {
+    "SuraName": "إبراهيم"
+  },
+  {
+    "SuraName": "الحجر"
+  },
+  {
+    "SuraName": "النحل"
+  },
+  {
+    "SuraName": "الإسراء"
+  },
+  {
+    "SuraName": "الكهف"
+  },
+  {
+    "SuraName": "مريم"
+  },
+  {
+    "SuraName": "طه"
+  },
+  {
+    "SuraName": "الأنبياء"
+  },
+  {
+    "SuraName": "الحج"
+  },
+  {
+    "SuraName": "المؤمنون"
+  },
+  {
+    "SuraName": "النور"
+  },
+  {
+    "SuraName": "الفرقان"
+  },
+  {
+    "SuraName": "الشعراء"
+  },
+  {
+    "SuraName": "النمل"
+  },
+  {
+    "SuraName": "القصص"
+  },
+  {
+    "SuraName": "العنكبوت"
+  },
+  {
+    "SuraName": "الروم"
+  },
+  {
+    "SuraName": "لقمان"
+  },
+  {
+    "SuraName": "السجدة"
+  },
+  {
+    "SuraName": "الأحزاب"
+  },
+  {
+    "SuraName": "سبأ"
+  },
+  {
+    "SuraName": "فاطر"
+  },
+  {
+    "SuraName": "يس"
+  },
+  {
+    "SuraName": "الصافات"
+  },
+  {
+    "SuraName": "ص"
+  },
+  {
+    "SuraName": "الزمر"
+  },
+  {
+    "SuraName": "غافر"
+  },
+  {
+    "SuraName": "فصلت"
+  },
+  {
+    "SuraName": "الشورى"
+  },
+  {
+    "SuraName": "الزخرف"
+  },
+  {
+    "SuraName": "الدخان"
+  },
+  {
+    "SuraName": "الجاثية"
+  },
+  {
+    "SuraName": "الأحقاف"
+  },
+  {
+    "SuraName": "محمد"
+  },
+  {
+    "SuraName": "الفتح"
+  },
+  {
+    "SuraName": "الحجرات"
+  },
+  {
+    "SuraName": "ق"
+  },
+  {
+    "SuraName": "الذاريات"
+  },
+  {
+    "SuraName": "الطور"
+  },
+  {
+    "SuraName": "النجم"
+  },
+  {
+    "SuraName": "القمر"
+  },
+  {
+    "SuraName": "الرحمن"
+  },
+  {
+    "SuraName": "الواقعة"
+  },
+  {
+    "SuraName": "الحديد"
+  },
+  {
+    "SuraName": "المجادلة"
+  },
+  {
+    "SuraName": "الحشر"
+  },
+  {
+    "SuraName": "الممتحنة"
+  },
+  {
+    "SuraName": "الصف"
+  },
+  {
+    "SuraName": "الجمعة"
+  },
+  {
+    "SuraName": "المنافقون"
+  },
+  {
+    "SuraName": "التغابن"
+  },
+  {
+    "SuraName": "الطلاق"
+  },
+  {
+    "SuraName": "التحريم"
+  },
+  {
+    "SuraName": "الملك"
+  },
+  {
+    "SuraName": "القلم"
+  },
+  {
+    "SuraName": "الحاقة"
+  },
+  {
+    "SuraName": "المعارج"
+  },
+  {
+    "SuraName": "نوح"
+  },
+  {
+    "SuraName": "الجن"
+  },
+  {
+    "SuraName": "المزمل"
+  },
+  {
+    "SuraName": "المدثر"
+  },
+  {
+    "SuraName": "القيامة"
+  },
+  {
+    "SuraName": "الإنسان"
+  },
+  {
+    "SuraName": "المرسلات"
+  },
+  {
+    "SuraName": "النبأ"
+  },
+  {
+    "SuraName": "النازعات"
+  },
+  {
+    "SuraName": "عبس"
+  },
+  {
+    "SuraName": "التكوير"
+  },
+  {
+    "SuraName": "الإنفطار"
+  },
+  {
+    "SuraName": "المطففين"
+  },
+  {
+    "SuraName": "الإنشقاق"
+  },
+  {
+    "SuraName": "البروج"
+  },
+  {
+    "SuraName": "الطارق"
+  },
+  {
+    "SuraName": "الأعلى"
+  },
+  {
+    "SuraName": "الغاشية"
+  },
+  {
+    "SuraName": "الفجر"
+  },
+  {
+    "SuraName": "البلد"
+  },
+  {
+    "SuraName": "الشمس"
+  },
+  {
+    "SuraName": "الليل"
+  },
+  {
+    "SuraName": "الضحى"
+  },
+  {
+    "SuraName": "الشرح"
+  },
+  {
+    "SuraName": "التين"
+  },
+  {
+    "SuraName": "العلق"
+  },
+  {
+    "SuraName": "القدر"
+  },
+  {
+    "SuraName": "البينة"
+  },
+  {
+    "SuraName": "الزلزلة"
+  },
+  {
+    "SuraName": "العاديات"
+  },
+  {
+    "SuraName": "القارعة"
+  },
+  {
+    "SuraName": "التكاثر"
+  },
+  {
+    "SuraName": "العصر"
+  },
+  {
+    "SuraName": "الهمزة"
+  },
+  {
+    "SuraName": "الفيل"
+  },
+  {
+    "SuraName": "قريش"
+  },
+  {
+    "SuraName": "الماعون"
+  },
+  {
+    "SuraName": "الكوثر"
+  },
+  {
+    "SuraName": "الكافرون"
+  },
+  {
+    "SuraName": "النصر"
+  },
+  {
+    "SuraName": "المسد"
+  },
+  {
+    "SuraName": "الإخلاص"
+  },
+  {
+    "SuraName": "الفلق"
+  },
+  {
+    "SuraName": "الناس"
+  }
+]

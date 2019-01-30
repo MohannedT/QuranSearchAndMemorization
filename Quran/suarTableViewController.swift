@@ -4,7 +4,7 @@
 //
 //  Created by Ahmed khattab on 1/24/19.
 //  Copyright © 2019 Eyad Shokry. All rights reserved.
-//
+// Original one
 
 import UIKit
 
@@ -12,21 +12,34 @@ class suarTableViewController: UITableViewController {
     
     @IBOutlet var suarTableView: UITableView!
     //var suarArray = [[String:Any]]()
-    var surasNamesArray = ["fatehah", "baqara", "Al Omran"]
-    var numberOfVersesArray = [8, 300, 100]
+    var surasNamesArray = [String]()
+    var numberOfVersesArray = [Int]()
+    
+    func getSurasNamesFromJSON(fileName: String) {
+        let pathForJsonFile = Bundle.main.path(forResource: fileName, ofType: "json")
+        let rawData = try? Data(contentsOf: URL(fileURLWithPath: pathForJsonFile!))
+        let parsedJSONData = try! JSONSerialization.jsonObject(with: rawData!, options: .allowFragments) as! [[String:String]]
+        for sura in parsedJSONData {
+            self.surasNamesArray.append(sura["SuraName"]!)
+        }
+    }
+    
+    func getVersesNumbersFromJSON(fileName: String) {
+        let pathForJsonFile = Bundle.main.path(forResource: fileName, ofType: "json")
+        let rawData = try? Data(contentsOf: URL(fileURLWithPath: pathForJsonFile!))
+        let parsedJSONData = try! JSONSerialization.jsonObject(with: rawData!, options: .allowFragments) as! [[String: Int]]
+        for versesNumber in parsedJSONData {
+            self.numberOfVersesArray.append(versesNumber["NumberofVerses"]!)
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       // suarArray = [["Name": "haFat" , "Verses" : 10], ["Name": "baqara" , "Verses" : 320]]
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        getSurasNamesFromJSON(fileName: "suraNames")
+        getVersesNumbersFromJSON(fileName: "numberOfVerses")
     }
-    
     
     // MARK: - Table view data source
     
@@ -55,7 +68,7 @@ class suarTableViewController: UITableViewController {
         let selectVersesVC = storyboard?.instantiateViewController(withIdentifier: "selectVerses") as! selectVersesViewController
         selectVersesVC.suraName = surasNamesArray[indexPath.row]
         selectVersesVC.suraVersesNumber = numberOfVersesArray[indexPath.row]
-        for var i in (1...numberOfVersesArray[indexPath.row]) {
+        for i in (1...numberOfVersesArray[indexPath.row]) {
             selectVersesVC.versesArray.append(i)
         }
 
