@@ -21,16 +21,6 @@ class selectVersesViewController: UIViewController , UIPickerViewDelegate, UIPic
     @IBOutlet weak var toPickerView: UIPickerView!
     
     
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        if(segue.identifier == "startTsmy3Segue") {
-//            
-//            let searchQuranVc = segue.destination as? SearchQuranByVoiceViewController
-//            searchQuranVc?.retriev = sender as! String
-//        }
-//    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

@@ -4,14 +4,13 @@
 //
 //  Created by Ahmed khattab on 1/24/19.
 //  Copyright © 2019 Eyad Shokry. All rights reserved.
-// Original one
+//
 
 import UIKit
 
 class suarTableViewController: UITableViewController {
     
     @IBOutlet var suarTableView: UITableView!
-    //var suarArray = [[String:Any]]()
     var surasNamesArray = [String]()
     var numberOfVersesArray = [Int]()
     
@@ -33,8 +32,6 @@ class suarTableViewController: UITableViewController {
         }
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         getSurasNamesFromJSON(fileName: "suraNames")
@@ -44,13 +41,10 @@ class suarTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-      //  return suarArray.count
         return surasNamesArray.count
     }
     
@@ -75,13 +69,4 @@ class suarTableViewController: UITableViewController {
         navigationController?.pushViewController(selectVersesVC, animated: true)
     }
     
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if(segue.identifier == "selectVerseSegue") {
-//
-//            let vc = segue.destination as? selectVersesViewController
-//            vc?.suraDictionary = sender as! [String : Any]
-//        }
-    
-    }
+}
