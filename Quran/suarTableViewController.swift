@@ -23,6 +23,7 @@ class suarTableViewController: UITableViewController {
         }
     }
     
+    
     func getVersesNumbersFromJSON(fileName: String) {
         let pathForJsonFile = Bundle.main.path(forResource: fileName, ofType: "json")
         let rawData = try? Data(contentsOf: URL(fileURLWithPath: pathForJsonFile!))
@@ -68,5 +69,5 @@ class suarTableViewController: UITableViewController {
 
         navigationController?.pushViewController(selectVersesVC, animated: true)
     }
-    
+    	    
 }

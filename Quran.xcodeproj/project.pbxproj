@@ -16,7 +16,6 @@
 		8656014222024DAA00A721F5 /* suraNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 8656014122024DAA00A721F5 /* suraNames.json */; };
 		C6298DEE21FB45AA00F49575 /* suarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6298DED21FB45AA00F49575 /* suarTableViewController.swift */; };
 		C6298DF021FB469100F49575 /* selectVersesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6298DEF21FB469100F49575 /* selectVersesViewController.swift */; };
-		E215839621FAE753008104A7 /* new.csv in Resources */ = {isa = PBXBuildFile; fileRef = E215839521FAE753008104A7 /* new.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		8656014122024DAA00A721F5 /* suraNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = suraNames.json; sourceTree = "<group>"; };
 		C6298DED21FB45AA00F49575 /* suarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suarTableViewController.swift; sourceTree = "<group>"; };
 		C6298DEF21FB469100F49575 /* selectVersesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectVersesViewController.swift; sourceTree = "<group>"; };
-		E215839521FAE753008104A7 /* new.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = new.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +68,6 @@
 				860F68E1217AA40E00627AB4 /* Assets.xcassets */,
 				860F68E3217AA40E00627AB4 /* LaunchScreen.storyboard */,
 				C6298DED21FB45AA00F49575 /* suarTableViewController.swift */,
-				E215839521FAE753008104A7 /* new.csv */,
 				860F68E6217AA40E00627AB4 /* Info.plist */,
 				C6298DEF21FB469100F49575 /* selectVersesViewController.swift */,
 				8656013E22024D0300A721F5 /* Resources */,
@@ -151,7 +148,6 @@
 				8656014022024D9C00A721F5 /* numberOfVerses.json in Resources */,
 				860F68E2217AA40E00627AB4 /* Assets.xcassets in Resources */,
 				860F68E0217AA40E00627AB4 /* Main.storyboard in Resources */,
-				E215839621FAE753008104A7 /* new.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
