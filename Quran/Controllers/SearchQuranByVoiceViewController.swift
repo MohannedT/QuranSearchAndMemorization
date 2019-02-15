@@ -239,23 +239,75 @@ class SearchQuranByVoiceViewController: UIViewController, SFSpeechRecognizerDele
         return result
     }
    
-    func GetSoraID(SoraName: String) -> Int
+    func Newcsv(data: String) -> [String]
     {
-        var data = readDataFromCSV(fileName: "newcsv" , fileType: "csv")
+        let rows = data.components(separatedBy: "\n")
+        return rows
+    }
+    
+    func GetVerses(SoraName: String , start: Int , end: Int) -> String
+    {
+        var data = readDataFromCSV(fileName: "newcsv(small)" , fileType: "csv")
         data = cleanRows(file: data!)
         let csvRows = csv(data: data!)
-        var SoraID = 0
+        var Info = [Int]()
+        //for index in 1...114
         for index in 1...114
         {
             if(csvRows[index][1] == SoraName)
             {
-                SoraID = Int(csvRows[index][0])!
+                Info.append(Int(csvRows[index][0])!)//SoraID
+                Info.append(Int(csvRows[index][2])!)//Number Of Verses per Sora
+                Info.append(Int(csvRows[index][3])!)//With BigDataSet
                 break
             }
         }
-        return SoraID
+        var data2 = readDataFromCSV(fileName: "BigDataSet(small)" , fileType: "csv")
+        data2 = cleanRows(file: data2!)
+        let Rows = Newcsv(data: data2!)
+        var result: [[String]] = []
+        for index in Info[2]...(Info[2]+Info[1])
+        {
+            let columns = Rows[index].components(separatedBy: ",")
+            result.append(columns)
+        }
+        
+        var EntireVerses = ""
+        for index in 0...(result.count-1)//Checkit
+        {
+            if(Int(result[index][2])! == start || Int(result[index][2])! > start && Int(result[index][2])! < end || Int(result[index][2])! == end)
+            {
+                EntireVerses = EntireVerses + result[index][3] + " "
+            }
+            if(Int(result[index][2])! == end)
+            {
+                break
+            }
+        }
+        return EntireVerses
+        
     }
-
+    
+    func SearchForWord(Word: String ) -> [[String]]
+    {
+        
+        var data = readDataFromCSV(fileName: "BigDataSet(small)" , fileType: "csv")
+        data = cleanRows(file: data!)
+        let rows = Newcsv(data: data!)
+        var result: [[String]] = []
+        for index in 1...(rows.count-1)//Checkit
+        {
+            if(rows[index].contains(Word))
+            {
+                let columns = rows[index].components(separatedBy: ",")
+                result.append(columns)
+            }
+        }
+        
+        return result
+        
+    }
+    
     
     func RetrieveVerses(Name: String ,Type: String , SoraName: String, start: Int , end: Int) -> String
     {
@@ -279,6 +331,23 @@ class SearchQuranByVoiceViewController: UIViewController, SFSpeechRecognizerDele
             }
         }
         return EntireVerses
+    }
+
+    func GetSoraID(SoraName: String) -> Int
+    {
+        var data = readDataFromCSV(fileName: "newcsv(small)" , fileType: "csv")
+        data = cleanRows(file: data!)
+        let csvRows = csv(data: data!)
+        var SoraID = 0
+        for index in 1...114
+        {
+            if(csvRows[index][1] == SoraName)
+            {
+                SoraID = Int(csvRows[index][0])!
+                break
+            }
+        }
+        return SoraID
     }
 
   

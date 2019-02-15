@@ -6,14 +6,162 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="mAQ-09-AnA">
+            <objects>
+                <tabBarController id="gbs-c3-gdC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="pcn-zE-5cV"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gz7-Bq-DaE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="f9b-rz-DQL" kind="relationship" relationship="viewControllers" id="p0W-O0-Ob7"/>
+                        <segue destination="SfF-YL-3nV" kind="relationship" relationship="viewControllers" id="GwO-4g-vPQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w3l-YB-Ho9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34" y="798"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="2Kr-WK-sOm">
+            <objects>
+                <viewController storyboardIdentifier="SearchQuranByText" id="SfF-YL-3nV" customClass="SearchQuranByTextViewController" customModule="Quran" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F9O-m7-D44">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbk-c8-fJX">
+                                <rect key="frame" x="16" y="151" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHJ-on-wsi">
+                                <rect key="frame" x="151" y="243" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="onClickSearchButton:" destination="SfF-YL-3nV" eventType="touchUpInside" id="y2W-n9-T5p"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fbk-c8-fJX" firstAttribute="leading" secondItem="ffr-Ow-bcz" secondAttribute="leading" constant="16" id="c9J-xl-ylC"/>
+                            <constraint firstItem="ffr-Ow-bcz" firstAttribute="trailing" secondItem="fbk-c8-fJX" secondAttribute="trailing" constant="16" id="fyN-0A-4OK"/>
+                            <constraint firstItem="fbk-c8-fJX" firstAttribute="top" secondItem="ffr-Ow-bcz" secondAttribute="top" constant="87" id="j0j-AN-22b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ffr-Ow-bcz"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="I1C-pZ-kjF"/>
+                    <connections>
+                        <outlet property="searchButton" destination="OHJ-on-wsi" id="GCf-VA-90d"/>
+                        <outlet property="userQueryTextField" destination="fbk-c8-fJX" id="6W2-cl-sqX"/>
+                        <segue destination="exX-W7-kTQ" kind="show" identifier="ShowVersesSegue" id="czV-ap-9Uy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4hT-SH-Y2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888.79999999999995" y="1269.7151424287856"/>
+        </scene>
+        <!--Retrieved Verses View Controller-->
+        <scene sceneID="KHr-yA-Y3s">
+            <objects>
+                <viewController id="exX-W7-kTQ" customClass="RetrievedVersesViewController" customModule="Quran" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lBB-pT-gWi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MeS-5f-NiP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VerseCell" rowHeight="188" id="3YS-OH-WTY" customClass="AyaTableViewCell" customModule="Quran" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="188"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3YS-OH-WTY" id="CzH-zH-tog">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="187.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="HlD-GM-IkH">
+                                                    <rect key="frame" x="15" y="11" width="345" height="30"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4I-yk-DMs">
+                                                            <rect key="frame" x="0.0" y="0.0" width="132.5" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbe-Ep-gXw">
+                                                            <rect key="frame" x="173.5" y="0.0" width="24.5" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SuraName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHO-FS-YGP">
+                                                            <rect key="frame" x="265" y="0.0" width="80" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="AyahText" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hno-DJ-WTK">
+                                                    <rect key="frame" x="0.0" y="59" width="375" height="128"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="hno-DJ-WTK" secondAttribute="trailing" id="2xY-dE-JkF"/>
+                                                <constraint firstItem="hno-DJ-WTK" firstAttribute="leading" secondItem="CzH-zH-tog" secondAttribute="leading" id="Aud-Qs-NIM"/>
+                                                <constraint firstItem="HlD-GM-IkH" firstAttribute="leading" secondItem="CzH-zH-tog" secondAttribute="leadingMargin" id="M2y-i9-4NN"/>
+                                                <constraint firstAttribute="bottom" secondItem="HlD-GM-IkH" secondAttribute="bottom" constant="146.5" id="X1t-gR-lhA"/>
+                                                <constraint firstItem="hno-DJ-WTK" firstAttribute="top" secondItem="HlD-GM-IkH" secondAttribute="bottom" constant="18" id="apC-3T-P3N"/>
+                                                <constraint firstAttribute="bottom" secondItem="hno-DJ-WTK" secondAttribute="bottom" id="mED-TL-0Jz"/>
+                                                <constraint firstItem="HlD-GM-IkH" firstAttribute="top" secondItem="CzH-zH-tog" secondAttribute="topMargin" id="qhr-va-9Uz"/>
+                                                <constraint firstItem="HlD-GM-IkH" firstAttribute="trailing" secondItem="CzH-zH-tog" secondAttribute="trailingMargin" id="toC-X9-5DQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ayaTextView" destination="hno-DJ-WTK" id="lUT-aa-uA2"/>
+                                            <outlet property="chapterNumberLabel" destination="Sbe-Ep-gXw" id="ayN-gM-yCc"/>
+                                            <outlet property="suraNameLabel" destination="ZHO-FS-YGP" id="HWK-Gm-Bpt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MeS-5f-NiP" firstAttribute="trailing" secondItem="X87-D5-v0F" secondAttribute="trailing" id="0Qw-Ae-DcP"/>
+                            <constraint firstItem="MeS-5f-NiP" firstAttribute="top" secondItem="X87-D5-v0F" secondAttribute="top" id="ODV-aS-wtx"/>
+                            <constraint firstItem="MeS-5f-NiP" firstAttribute="leading" secondItem="X87-D5-v0F" secondAttribute="leading" id="Okz-Co-beM"/>
+                            <constraint firstItem="MeS-5f-NiP" firstAttribute="bottom" secondItem="X87-D5-v0F" secondAttribute="bottom" id="RCv-dG-7MG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X87-D5-v0F"/>
+                    </view>
+                    <connections>
+                        <outlet property="versesTableView" destination="MeS-5f-NiP" id="LbT-Xd-3rM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JMt-LT-aKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1645.5999999999999" y="1269.7151424287856"/>
+        </scene>
         <!--Search Quran By Voice View Controller-->
         <scene sceneID="cSD-wX-3ud">
             <objects>
-                <viewController storyboardIdentifier="SearchQuran" id="Wft-y0-Blk" customClass="SearchQuranByVoiceViewController" customModule="Quran" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchQuranByVoice" id="Wft-y0-Blk" customClass="SearchQuranByVoiceViewController" customModule="Quran" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Klg-D3-sd0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WrN-yd-Thc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660" y="1572"/>
+            <point key="canvasLocation" x="2460" y="457"/>
         </scene>
         <!--Item-->
         <scene sceneID="0xh-Wf-ubt">
@@ -66,14 +214,14 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="f9b-rz-DQL" kind="relationship" relationship="rootViewController" id="MMu-fR-v8b"/>
+                        <segue destination="gbs-c3-gdC" kind="relationship" relationship="rootViewController" id="XKV-da-5L5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6y5-bB-fKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="796"/>
+            <point key="canvasLocation" x="-713" y="798"/>
         </scene>
-        <!--Suar Table View Controller-->
+        <!--Recitation-->
         <scene sceneID="vor-iG-2GE">
             <objects>
                 <tableViewController storyboardIdentifier="SurasTableViewController" id="f9b-rz-DQL" customClass="suarTableViewController" customModule="Quran" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,6 +254,7 @@
                             <outlet property="delegate" destination="f9b-rz-DQL" id="6cu-fm-cZo"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Recitation" id="YSU-16-zrg"/>
                     <navigationItem key="navigationItem" id="Dbf-OL-Wnh"/>
                     <connections>
                         <outlet property="suarTableView" destination="ZN9-bt-s0K" id="C4q-c3-ep8"/>
@@ -113,7 +262,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJx-eq-ZtH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="870" y="797"/>
+            <point key="canvasLocation" x="889" y="458"/>
         </scene>
         <!--Select Verses View Controller-->
         <scene sceneID="pRU-LG-aTo">
@@ -190,7 +339,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0UU-sS-R89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660" y="798.35082458770626"/>
+            <point key="canvasLocation" x="1647" y="457"/>
         </scene>
     </scenes>
     <resources>

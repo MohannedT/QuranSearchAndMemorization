@@ -12,6 +12,11 @@
 		860F68E2217AA40E00627AB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 860F68E1217AA40E00627AB4 /* Assets.xcassets */; };
 		860F68E5217AA40E00627AB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 860F68E3217AA40E00627AB4 /* LaunchScreen.storyboard */; };
 		860F68ED217AB7EF00627AB4 /* SearchQuranByVoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860F68EC217AB7EF00627AB4 /* SearchQuranByVoiceViewController.swift */; };
+		861D496D22160EB800CF3449 /* BigDataSet(small).csv in Resources */ = {isa = PBXBuildFile; fileRef = 861D496B22160EB800CF3449 /* BigDataSet(small).csv */; };
+		861D496E22160EB800CF3449 /* newcsv(small).csv in Resources */ = {isa = PBXBuildFile; fileRef = 861D496C22160EB800CF3449 /* newcsv(small).csv */; };
+		861D49722216116300CF3449 /* SearchQuranByTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D49712216116300CF3449 /* SearchQuranByTextViewController.swift */; };
+		861D49742216159E00CF3449 /* RetrievedVersesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D49732216159E00CF3449 /* RetrievedVersesViewController.swift */; };
+		861D497622163A6A00CF3449 /* AyaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D497522163A6A00CF3449 /* AyaTableViewCell.swift */; };
 		8656014022024D9C00A721F5 /* numberOfVerses.json in Resources */ = {isa = PBXBuildFile; fileRef = 8656013F22024D9C00A721F5 /* numberOfVerses.json */; };
 		8656014222024DAA00A721F5 /* suraNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 8656014122024DAA00A721F5 /* suraNames.json */; };
 		C6298DEE21FB45AA00F49575 /* suarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6298DED21FB45AA00F49575 /* suarTableViewController.swift */; };
@@ -26,6 +31,11 @@
 		860F68E4217AA40E00627AB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		860F68E6217AA40E00627AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		860F68EC217AB7EF00627AB4 /* SearchQuranByVoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuranByVoiceViewController.swift; sourceTree = "<group>"; };
+		861D496B22160EB800CF3449 /* BigDataSet(small).csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "BigDataSet(small).csv"; sourceTree = "<group>"; };
+		861D496C22160EB800CF3449 /* newcsv(small).csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "newcsv(small).csv"; sourceTree = "<group>"; };
+		861D49712216116300CF3449 /* SearchQuranByTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuranByTextViewController.swift; sourceTree = "<group>"; };
+		861D49732216159E00CF3449 /* RetrievedVersesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrievedVersesViewController.swift; sourceTree = "<group>"; };
+		861D497522163A6A00CF3449 /* AyaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyaTableViewCell.swift; sourceTree = "<group>"; };
 		8656013F22024D9C00A721F5 /* numberOfVerses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = numberOfVerses.json; sourceTree = "<group>"; };
 		8656014122024DAA00A721F5 /* suraNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = suraNames.json; sourceTree = "<group>"; };
 		C6298DED21FB45AA00F49575 /* suarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suarTableViewController.swift; sourceTree = "<group>"; };
@@ -63,16 +73,35 @@
 			isa = PBXGroup;
 			children = (
 				860F68D8217AA40E00627AB4 /* AppDelegate.swift */,
-				860F68EC217AB7EF00627AB4 /* SearchQuranByVoiceViewController.swift */,
-				860F68DE217AA40E00627AB4 /* Main.storyboard */,
-				860F68E1217AA40E00627AB4 /* Assets.xcassets */,
-				860F68E3217AA40E00627AB4 /* LaunchScreen.storyboard */,
-				C6298DED21FB45AA00F49575 /* suarTableViewController.swift */,
-				860F68E6217AA40E00627AB4 /* Info.plist */,
-				C6298DEF21FB469100F49575 /* selectVersesViewController.swift */,
+				861D49792216531700CF3449 /* Views */,
+				861D4978221652C100CF3449 /* Controllers */,
 				8656013E22024D0300A721F5 /* Resources */,
+				860F68E1217AA40E00627AB4 /* Assets.xcassets */,
+				860F68E6217AA40E00627AB4 /* Info.plist */,
 			);
 			path = Quran;
+			sourceTree = "<group>";
+		};
+		861D4978221652C100CF3449 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C6298DED21FB45AA00F49575 /* suarTableViewController.swift */,
+				C6298DEF21FB469100F49575 /* selectVersesViewController.swift */,
+				860F68EC217AB7EF00627AB4 /* SearchQuranByVoiceViewController.swift */,
+				861D49712216116300CF3449 /* SearchQuranByTextViewController.swift */,
+				861D49732216159E00CF3449 /* RetrievedVersesViewController.swift */,
+				861D497522163A6A00CF3449 /* AyaTableViewCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		861D49792216531700CF3449 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				860F68DE217AA40E00627AB4 /* Main.storyboard */,
+				860F68E3217AA40E00627AB4 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8656013E22024D0300A721F5 /* Resources */ = {
@@ -80,6 +109,8 @@
 			children = (
 				8656013F22024D9C00A721F5 /* numberOfVerses.json */,
 				8656014122024DAA00A721F5 /* suraNames.json */,
+				861D496B22160EB800CF3449 /* BigDataSet(small).csv */,
+				861D496C22160EB800CF3449 /* newcsv(small).csv */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -146,7 +177,9 @@
 				860F68E5217AA40E00627AB4 /* LaunchScreen.storyboard in Resources */,
 				8656014222024DAA00A721F5 /* suraNames.json in Resources */,
 				8656014022024D9C00A721F5 /* numberOfVerses.json in Resources */,
+				861D496D22160EB800CF3449 /* BigDataSet(small).csv in Resources */,
 				860F68E2217AA40E00627AB4 /* Assets.xcassets in Resources */,
+				861D496E22160EB800CF3449 /* newcsv(small).csv in Resources */,
 				860F68E0217AA40E00627AB4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,8 +192,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6298DF021FB469100F49575 /* selectVersesViewController.swift in Sources */,
+				861D49742216159E00CF3449 /* RetrievedVersesViewController.swift in Sources */,
+				861D49722216116300CF3449 /* SearchQuranByTextViewController.swift in Sources */,
 				C6298DEE21FB45AA00F49575 /* suarTableViewController.swift in Sources */,
 				860F68D9217AA40E00627AB4 /* AppDelegate.swift in Sources */,
+				861D497622163A6A00CF3449 /* AyaTableViewCell.swift in Sources */,
 				860F68ED217AB7EF00627AB4 /* SearchQuranByVoiceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
