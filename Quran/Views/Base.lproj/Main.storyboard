@@ -200,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WrN-yd-Thc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2460" y="457"/>
+            <point key="canvasLocation" x="3290" y="457"/>
         </scene>
         <!--Item-->
         <scene sceneID="0xh-Wf-ubt">
@@ -297,34 +297,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iR-qO-MXT">
-                                <rect key="frame" x="114" y="598" width="146" height="30"/>
-                                <color key="backgroundColor" red="0.3222958011" green="1" blue="0.32523157029999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Start Memorization">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.76173520725053967" blue="0.24279341752390426" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lt5-3U-6Lm"/>
+                                </constraints>
+                                <state key="normal" title="Select Verses">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="startMemorization:" destination="8CS-cy-T9e" eventType="touchUpInside" id="173-I8-dS2"/>
+                                    <segue destination="cua-8R-XO6" kind="show" id="XOa-pb-jGY"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5iR-qO-MXT" firstAttribute="bottom" secondItem="nxa-Pv-FVd" secondAttribute="bottom" id="3Px-yH-9tH"/>
                             <constraint firstItem="gGv-yZ-5jA" firstAttribute="top" secondItem="Ng4-oI-vWR" secondAttribute="bottom" constant="24" id="AKj-il-Mp1"/>
                             <constraint firstItem="nxa-Pv-FVd" firstAttribute="trailing" secondItem="Ng4-oI-vWR" secondAttribute="trailing" constant="165" id="AZF-Bo-qe0"/>
+                            <constraint firstItem="5iR-qO-MXT" firstAttribute="leading" secondItem="nxa-Pv-FVd" secondAttribute="leading" id="Acy-Gy-GEh"/>
                             <constraint firstItem="gGv-yZ-5jA" firstAttribute="leading" secondItem="nxa-Pv-FVd" secondAttribute="leading" id="FvA-d0-Vag"/>
                             <constraint firstItem="PG3-Xi-TCX" firstAttribute="leading" secondItem="nxa-Pv-FVd" secondAttribute="leading" constant="16" id="Ihs-bC-IpN"/>
                             <constraint firstItem="DRw-z9-lVM" firstAttribute="leading" secondItem="nxa-Pv-FVd" secondAttribute="leading" constant="177" id="L2t-Fs-pZo"/>
                             <constraint firstItem="T0w-xo-cmL" firstAttribute="leading" secondItem="nxa-Pv-FVd" secondAttribute="leading" id="LOR-7G-LsD"/>
                             <constraint firstItem="Ng4-oI-vWR" firstAttribute="top" secondItem="PG3-Xi-TCX" secondAttribute="bottom" constant="48" id="Ntu-zU-ta6"/>
-                            <constraint firstItem="nxa-Pv-FVd" firstAttribute="trailing" secondItem="5iR-qO-MXT" secondAttribute="trailing" constant="115" id="RFg-fo-Dh4"/>
-                            <constraint firstItem="5iR-qO-MXT" firstAttribute="leading" secondItem="nxa-Pv-FVd" secondAttribute="leading" constant="114" id="Tra-SX-sa4"/>
+                            <constraint firstItem="5iR-qO-MXT" firstAttribute="trailing" secondItem="nxa-Pv-FVd" secondAttribute="trailing" id="UQ5-eU-JlG"/>
                             <constraint firstItem="nxa-Pv-FVd" firstAttribute="trailing" secondItem="DRw-z9-lVM" secondAttribute="trailing" constant="177" id="UX0-F0-oud"/>
                             <constraint firstItem="T0w-xo-cmL" firstAttribute="trailing" secondItem="nxa-Pv-FVd" secondAttribute="trailing" id="Wt9-G2-2CJ"/>
                             <constraint firstItem="gGv-yZ-5jA" firstAttribute="trailing" secondItem="nxa-Pv-FVd" secondAttribute="trailing" id="Yu5-u8-CXh"/>
                             <constraint firstItem="DRw-z9-lVM" firstAttribute="top" secondItem="gGv-yZ-5jA" secondAttribute="bottom" constant="8" id="bqf-t0-MVW"/>
                             <constraint firstItem="PG3-Xi-TCX" firstAttribute="top" secondItem="Xq0-qG-YpL" secondAttribute="top" id="jcq-s9-NhV"/>
                             <constraint firstItem="nxa-Pv-FVd" firstAttribute="trailing" secondItem="PG3-Xi-TCX" secondAttribute="trailing" constant="16" id="kGa-yK-jeE"/>
-                            <constraint firstItem="5iR-qO-MXT" firstAttribute="top" secondItem="T0w-xo-cmL" secondAttribute="bottom" constant="15" id="lnx-KQ-jjz"/>
                             <constraint firstItem="T0w-xo-cmL" firstAttribute="top" secondItem="gGv-yZ-5jA" secondAttribute="bottom" constant="31" id="nuH-Lh-toc"/>
                             <constraint firstItem="Ng4-oI-vWR" firstAttribute="leading" secondItem="nxa-Pv-FVd" secondAttribute="leading" constant="165" id="zbo-2C-2Oz"/>
                         </constraints>
@@ -334,15 +338,36 @@
                         <outlet property="fromPickerView" destination="gGv-yZ-5jA" id="Hi2-8F-FlF"/>
                         <outlet property="suraNameLabel" destination="PG3-Xi-TCX" id="0B9-2f-30x"/>
                         <outlet property="toPickerView" destination="T0w-xo-cmL" id="A0w-vD-Xag"/>
-                        <segue destination="Wft-y0-Blk" kind="showDetail" identifier="startTsmy3Segue" id="Duv-vl-2JJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0UU-sS-R89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1647" y="457"/>
+            <point key="canvasLocation" x="1645.5999999999999" y="456.52173913043481"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ydm-gA-ihK">
+            <objects>
+                <viewController id="cua-8R-XO6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zb3-eB-pVS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="readingBackground1" translatesAutoresizingMaskIntoConstraints="NO" id="N2A-ht-Nhu">
+                                <rect key="frame" x="54" y="126" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="co2-xI-mTJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yw4-uW-R5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2439" y="457"/>
         </scene>
     </scenes>
     <resources>
         <image name="Record" width="155" height="155"/>
+        <image name="readingBackground1" width="188" height="281"/>
     </resources>
 </document>

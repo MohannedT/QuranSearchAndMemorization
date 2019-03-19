@@ -74,7 +74,6 @@ class selectVersesViewController: UIViewController , UIPickerViewDelegate, UIPic
         if(fromVerse <= toVerse)
         {
             let searchQuranByVoiceVC = storyboard?.instantiateViewController(withIdentifier: "SearchQuranByVoice") as? SearchQuranByVoiceViewController
-            navigationController?.pushViewController(searchQuranByVoiceVC!, animated: true)
             let stringCompare = searchQuranByVoiceVC?.RetrieveVerses(Name: "BigDataSet(small)", Type: "csv", SoraName: suraName!, start: fromVerse, end: toVerse)
             searchQuranByVoiceVC?.retriev = stringCompare!
             
