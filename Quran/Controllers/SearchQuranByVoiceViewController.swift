@@ -129,7 +129,7 @@ class SearchQuranByVoiceViewController: UIViewController, SFSpeechRecognizerDele
                 self.recognizedText.text = result?.bestTranscription.formattedString
                 self.versesplus = (result?.bestTranscription.formattedString)!
                 self.ArrayB = self.versesplus.components(separatedBy: " ")
-                for l in 0..<self.ArrayB.count-1{
+                for _ in 0..<self.ArrayB.count-1{
                   
                     self.ArrayB.remove(at: 0)
                 }
