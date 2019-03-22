@@ -25,6 +25,7 @@ class QuranReadingViewController: UIViewController {
 //        SuraVersesTextView.adjustsFontForContentSizeCategory = true
         
         SuraVersesTextView.text = selectedVerses
+        suraNameLabel.text = suraName
     }
 
 
