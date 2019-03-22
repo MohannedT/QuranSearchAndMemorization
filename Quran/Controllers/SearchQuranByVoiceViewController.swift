@@ -245,7 +245,9 @@ class SearchQuranByVoiceViewController: UIViewController, SFSpeechRecognizerDele
         return rows
     }
     
-    func GetVerses(SoraName: String , start: Int , end: Int) -> String
+        //flag = 0 ( mn 8yr t4kyl 34an Ltsmy3 )
+    //flag = 1 ( b Lt4kyl 34an Lqraya )
+    func GetVerses(SoraName: String , start: Int , end: Int , flag: Int) -> String
     {
         var data = readDataFromCSV(fileName: "newcsv(small)" , fileType: "csv")
         data = cleanRows(file: data!)
@@ -273,17 +275,35 @@ class SearchQuranByVoiceViewController: UIViewController, SFSpeechRecognizerDele
         }
         
         var EntireVerses = ""
-        for index in 0...(result.count-1)//Checkit
+        if(flag == 0)
         {
-            if(Int(result[index][2])! == start || Int(result[index][2])! > start && Int(result[index][2])! < end || Int(result[index][2])! == end)
+            for index in 0...(result.count-1)//Checkit
             {
-                EntireVerses = EntireVerses + result[index][3] + " "
-            }
-            if(Int(result[index][2])! == end)
-            {
-                break
+                if(Int(result[index][2])! == start || Int(result[index][2])! > start && Int(result[index][2])! < end || Int(result[index][2])! == end)
+                {
+                    EntireVerses = EntireVerses + result[index][3] + " "
+                }
+                if(Int(result[index][2])! == end)
+                {
+                    break
+                }
             }
         }
+        else
+        {
+            for index in 0...(result.count-1)//Checkit
+            {
+                if(Int(result[index][2])! == start || Int(result[index][2])! > start && Int(result[index][2])! < end || Int(result[index][2])! == end)
+                {
+                    EntireVerses = EntireVerses + result[index][6] + "【\(result[index][2])】"
+                }
+                if(Int(result[index][2])! == end)
+                {
+                    break
+                }
+            }
+        }
+
         return EntireVerses
         
     }
