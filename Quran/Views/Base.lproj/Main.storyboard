@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DYM-N6-rwZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DYM-N6-rwZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="mAQ-09-AnA">
@@ -49,9 +43,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHJ-on-wsi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHJ-on-wsi">
                                 <rect key="frame" x="151" y="243" width="73" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="onClickSearchButton:" destination="SfF-YL-3nV" eventType="touchUpInside" id="y2W-n9-T5p"/>
@@ -60,6 +53,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="OHJ-on-wsi" firstAttribute="top" secondItem="fbk-c8-fJX" secondAttribute="bottom" constant="62" id="2KQ-NB-6yC"/>
+                            <constraint firstItem="OHJ-on-wsi" firstAttribute="centerX" secondItem="fbk-c8-fJX" secondAttribute="centerX" id="Stm-0W-2ay"/>
+                            <constraint firstItem="OHJ-on-wsi" firstAttribute="leading" secondItem="ffr-Ow-bcz" secondAttribute="leading" constant="151" id="ZR6-1i-Q4I"/>
                             <constraint firstItem="fbk-c8-fJX" firstAttribute="leading" secondItem="ffr-Ow-bcz" secondAttribute="leading" constant="16" id="c9J-xl-ylC"/>
                             <constraint firstItem="ffr-Ow-bcz" firstAttribute="trailing" secondItem="fbk-c8-fJX" secondAttribute="trailing" constant="16" id="fyN-0A-4OK"/>
                             <constraint firstItem="fbk-c8-fJX" firstAttribute="top" secondItem="ffr-Ow-bcz" secondAttribute="top" constant="87" id="j0j-AN-22b"/>
@@ -120,7 +116,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="AyahText" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hno-DJ-WTK">
-                                                    <rect key="frame" x="0.0" y="59" width="375" height="128"/>
+                                                    <rect key="frame" x="0.0" y="59" width="375" height="128.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

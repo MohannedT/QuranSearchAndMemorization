@@ -322,7 +322,7 @@ class SearchQuranByVoiceViewController: UIViewController, SFSpeechRecognizerDele
             {
                 if(Int(csvRows[index][2])! == start || Int(csvRows[index][2])! > start && Int(csvRows[index][2])! < end || Int(csvRows[index][2])! == end)
                 {
-                    EntireVerses = EntireVerses + csvRows[index][3] + " "
+                    EntireVerses = EntireVerses + csvRows[index][6] + " "
                 }
                 if(Int(csvRows[index][2])! == end)
                 {
