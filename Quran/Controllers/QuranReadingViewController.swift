@@ -14,7 +14,9 @@ class QuranReadingViewController: UIViewController {
     @IBOutlet weak var chapterNumberLabel: UILabel!
     @IBOutlet weak var SuraVersesTextView: UITextView!
     var selectedVerses = ""
-    var suraName: String?
+    var suraName: String?    
+    var ChapterID: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +28,7 @@ class QuranReadingViewController: UIViewController {
         
         SuraVersesTextView.text = selectedVerses
         suraNameLabel.text = suraName
+        chapterNumberLabel.text = " الجزء (\(ChapterID!))"
     }
 
 
