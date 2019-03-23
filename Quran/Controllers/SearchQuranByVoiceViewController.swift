@@ -304,7 +304,37 @@ class SearchQuranByVoiceViewController: UIViewController, SFSpeechRecognizerDele
             }
         }
 
-        return EntireVerses
+        return EntireVerses   
+    }
+    
+    func GetChapterId(SoraName: String , start: Int , end: Int) -> String
+    {
+        var data = readDataFromCSV(fileName: "newcsv(small)" , fileType: "csv")
+        data = cleanRows(file: data!)
+        let csvRows = csv(data: data!)
+        var Info = [Int]()
+        //for index in 1...114
+        for index in 1...114
+        {
+            if(csvRows[index][1] == SoraName)
+            {
+                Info.append(Int(csvRows[index][0])!)//SoraID
+                Info.append(Int(csvRows[index][2])!)//Number Of Verses per Sora
+                Info.append(Int(csvRows[index][3])!)//With BigDataSet
+                break
+            }
+        }
+        var data2 = readDataFromCSV(fileName: "BigDataSet(small)" , fileType: "csv")
+        data2 = cleanRows(file: data2!)
+        let Rows = Newcsv(data: data2!)
+        var result: [[String]] = []
+        for index in Info[2]...(Info[2]+Info[1])
+        {
+            let columns = Rows[index].components(separatedBy: ",")
+            result.append(columns)
+        }
+        
+        return result[0][0]
         
     }
     
