@@ -14,12 +14,14 @@ class QuranReadingViewController: UIViewController {
     @IBOutlet weak var chapterNumberLabel: UILabel!
     @IBOutlet weak var SuraVersesTextView: UITextView!
     var selectedVerses = ""
-    var suraName: String?    
+    var selectedVersesWithoutTashkel = ""
+    var from = 0
+    var to = 0
+    var suraName = ""
     var ChapterID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 //        guard let uthmanFont = UIFont(name: "UthmanTN1Ver10", size: UIFont.labelFontSize) else {
 //            fatalError("Faild to load font")
 //        }
@@ -32,6 +34,11 @@ class QuranReadingViewController: UIViewController {
     }
 
 
-
+    @IBAction func onClickStartRecitationButton(_ sender: UIButton) {
+        let recitationVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchQuranByVoice") as? SearchQuranByVoiceViewController
+        recitationVC?.retriev = recitationVC?.GetVerses(SoraName: suraName, start: from, end: to, flag: 0) ?? ""
+        self.navigationController?.pushViewController(recitationVC!, animated: true)
+    }
+    
 
 }

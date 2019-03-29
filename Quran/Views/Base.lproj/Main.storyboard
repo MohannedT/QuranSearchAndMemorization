@@ -310,6 +310,9 @@
                                 <state key="normal" title="Start Recitation">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickStartRecitationButton:" destination="cua-8R-XO6" eventType="touchUpInside" id="sTA-tz-zcf"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ih-Yn-iL4">
                                 <rect key="frame" x="32" y="64" width="316" height="504"/>

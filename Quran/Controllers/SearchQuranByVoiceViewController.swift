@@ -106,9 +106,10 @@ class SearchQuranByVoiceViewController: UIViewController, SFSpeechRecognizerDele
         
         let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory(AVAudioSession.Category.record, mode: .default, options:[])
-           // try audioSession.setCategory(AVAudioSession.Category.record)
-            try audioSession.setMode(AVAudioSession.Mode.measurement)
+           // try audioSession.setCategory(AVAudioSession.Category.record, mode: AVAudioSession.Mode.measurement, options:[])
+            //try audioSession.setCategory(AVAudioSession.Category.record)
+            try audioSession.setCategory(.record, mode: .measurement)
+          //  try audioSession.setMode(AVAudioSession.Mode.measurement)
             try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         }
         catch {
