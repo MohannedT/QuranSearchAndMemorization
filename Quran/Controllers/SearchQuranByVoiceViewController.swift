@@ -59,7 +59,7 @@ class SearchQuranByVoiceViewController: UIViewController, SFSpeechRecognizerDele
         print(verses)
         self.ArrayA  = verses.components(separatedBy: " ")
         print(ArrayA)
-        
+
         /*var ArrayB = versesplus.components(separatedBy: " ")
             print(ArrayB)
  
@@ -132,7 +132,7 @@ class SearchQuranByVoiceViewController: UIViewController, SFSpeechRecognizerDele
                 self.versesplus = (result?.bestTranscription.formattedString)!
                 self.ArrayB = self.versesplus.components(separatedBy: " ")
                 for _ in 0..<self.ArrayB.count-1{
-                  
+
                     self.ArrayB.remove(at: 0)
                 }
           

@@ -36,7 +36,7 @@ class QuranReadingViewController: UIViewController {
 
     @IBAction func onClickStartRecitationButton(_ sender: UIButton) {
         let recitationVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchQuranByVoice") as? SearchQuranByVoiceViewController
-        recitationVC?.retriev = recitationVC?.GetVerses(SoraName: suraName, start: from, end: to, flag: 0) ?? ""
+//        recitationVC?.retriev = recitationVC?.GetVerses(SoraName: suraName, start: from, end: to, flag: 0) ?? ""
         self.navigationController?.pushViewController(recitationVC!, animated: true)
     }
     

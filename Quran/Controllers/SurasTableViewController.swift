@@ -40,6 +40,7 @@ class SurasTableViewController: UITableViewController {
         super.viewDidLoad()
         getSurasNamesFromJSON(fileName: "suraNames")
         getVersesNumbersFromJSON(fileName: "numberOfVerses")
+        
     }
     
     // MARK: - Table view data source
