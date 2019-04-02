@@ -93,7 +93,7 @@ extension SurasTableViewController: UIPickerViewDelegate, UIPickerViewDataSource
         let vc = UIViewController()
         vc.preferredContentSize = CGSize(width: 250,height: 250)
 
-        let alert = UIAlertController(title: "Select Verses", message: "From \t To\n\n", preferredStyle: UIAlertController.Style.alert);
+        let alert = UIAlertController(title: "Select Verses", message: "From \t To\n\n", preferredStyle: UIAlertControllerStyle.alert)
         alert.isModalInPopover = true
         alert.setValue(vc, forKey: "contentViewController")
         let pickerFrame = UIPickerView(frame: CGRect(x: 0, y: 0, width: 250, height: 300))

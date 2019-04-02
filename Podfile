@@ -6,5 +6,5 @@ target 'Quran' do
   use_frameworks!
 
   # Pods for Quran
-pod 'SideMenu'
+
 end
