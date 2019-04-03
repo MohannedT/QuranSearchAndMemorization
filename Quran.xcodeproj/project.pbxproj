@@ -22,12 +22,13 @@
 		86223B63224E698200706DAB /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86223B62224E698200706DAB /* Client.swift */; };
 		86223B71224F0A4000706DAB /* PrayerTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86223B70224F0A4000706DAB /* PrayerTimes.swift */; };
 		86223B75224F96B500706DAB /* PrayerTimesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86223B74224F96B500706DAB /* PrayerTimesTableViewController.swift */; };
-		8656014022024D9C00A721F5 /* numberOfVerses.json in Resources */ = {isa = PBXBuildFile; fileRef = 8656013F22024D9C00A721F5 /* numberOfVerses.json */; };
 		8656014222024DAA00A721F5 /* suraNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 8656014122024DAA00A721F5 /* suraNames.json */; };
 		867B428E22519A86009DF490 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867B428D22519A86009DF490 /* ViewController+Extension.swift */; };
 		86DF2BA622424B0700D6C8E6 /* UthmanTN1Ver10.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86DF2BA322424AA500D6C8E6 /* UthmanTN1Ver10.otf */; };
 		86DF2BAA2242507E00D6C8E6 /* QuranReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF2BA92242507E00D6C8E6 /* QuranReadingViewController.swift */; };
 		C6298DEE21FB45AA00F49575 /* SurasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6298DED21FB45AA00F49575 /* SurasTableViewController.swift */; };
+		C62EE66A2254397C00AE9204 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62EE6682254397C00AE9204 /* TableViewCell.swift */; };
+		C62EE66B2254397C00AE9204 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62EE6692254397C00AE9204 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,13 +52,14 @@
 		86223B62224E698200706DAB /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		86223B70224F0A4000706DAB /* PrayerTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimes.swift; sourceTree = "<group>"; };
 		86223B74224F96B500706DAB /* PrayerTimesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesTableViewController.swift; sourceTree = "<group>"; };
-		8656013F22024D9C00A721F5 /* numberOfVerses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = numberOfVerses.json; sourceTree = "<group>"; };
 		8656014122024DAA00A721F5 /* suraNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = suraNames.json; sourceTree = "<group>"; };
 		867B428D22519A86009DF490 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		86DF2BA322424AA500D6C8E6 /* UthmanTN1Ver10.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UthmanTN1Ver10.otf; sourceTree = "<group>"; };
 		86DF2BA92242507E00D6C8E6 /* QuranReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranReadingViewController.swift; sourceTree = "<group>"; };
 		8C680D5D3C87C021240E3B31 /* Pods-Quran.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quran.release.xcconfig"; path = "Target Support Files/Pods-Quran/Pods-Quran.release.xcconfig"; sourceTree = "<group>"; };
 		C6298DED21FB45AA00F49575 /* SurasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurasTableViewController.swift; sourceTree = "<group>"; };
+		C62EE6682254397C00AE9204 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		C62EE6692254397C00AE9204 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				860F68DE217AA40E00627AB4 /* Main.storyboard */,
+				C62EE6682254397C00AE9204 /* TableViewCell.swift */,
+				C62EE6692254397C00AE9204 /* TableViewCell.xib */,
 				860F68E3217AA40E00627AB4 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -194,7 +198,6 @@
 		86DF2BA422424AB800D6C8E6 /* json files */ = {
 			isa = PBXGroup;
 			children = (
-				8656013F22024D9C00A721F5 /* numberOfVerses.json */,
 				8656014122024DAA00A721F5 /* suraNames.json */,
 			);
 			path = "json files";
@@ -273,7 +276,7 @@
 				86DF2BA622424B0700D6C8E6 /* UthmanTN1Ver10.otf in Resources */,
 				860F68E5217AA40E00627AB4 /* LaunchScreen.storyboard in Resources */,
 				8656014222024DAA00A721F5 /* suraNames.json in Resources */,
-				8656014022024D9C00A721F5 /* numberOfVerses.json in Resources */,
+				C62EE66B2254397C00AE9204 /* TableViewCell.xib in Resources */,
 				861D496D22160EB800CF3449 /* BigDataSet(small).csv in Resources */,
 				860F68E2217AA40E00627AB4 /* Assets.xcassets in Resources */,
 				861D496E22160EB800CF3449 /* newcsv(small).csv in Resources */,
@@ -309,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62EE66A2254397C00AE9204 /* TableViewCell.swift in Sources */,
 				861D49742216159E00CF3449 /* RetrievedVersesViewController.swift in Sources */,
 				861D49722216116300CF3449 /* SearchQuranByTextViewController.swift in Sources */,
 				C6298DEE21FB45AA00F49575 /* SurasTableViewController.swift in Sources */,

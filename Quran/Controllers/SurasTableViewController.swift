@@ -13,33 +13,33 @@ class SurasTableViewController: UITableViewController {
     @IBOutlet var suarTableView: UITableView!
     var surasNamesArray = [String]()
     var numberOfVersesArray = [Int]()
+    var surasTypeArray = [Int]()
+    var surasChapterArray = [String]()
     var versesNumber = 0
     var versesArray = [Int]()
     var suraName = ""
     
-    func getSurasNamesFromJSON(fileName: String) {
+    func getSurasFromJSON(fileName: String) {
         let pathForJsonFile = Bundle.main.path(forResource: fileName, ofType: "json")
         let rawData = try? Data(contentsOf: URL(fileURLWithPath: pathForJsonFile!))
-        let parsedJSONData = try! JSONSerialization.jsonObject(with: rawData!, options: .allowFragments) as! [[String:String]]
-        for sura in parsedJSONData {
-            self.surasNamesArray.append(sura["SuraName"]!)
+        let parsedJSONData = try! JSONSerialization.jsonObject(with: rawData!) as! [String : Any]
+        for sura in parsedJSONData["SuraData"] as! [Dictionary<String , Any>]  {
+            self.surasNamesArray.append(sura["SuraName"] as! String)
+            self.numberOfVersesArray.append(sura["NumberofVerses"] as! Int)
+            self.surasTypeArray.append(sura["Type"] as! Int)
+            self.surasChapterArray.append(sura["Chapter"] as! String)
         }
+        
     }
     
-    
-    func getVersesNumbersFromJSON(fileName: String) {
-        let pathForJsonFile = Bundle.main.path(forResource: fileName, ofType: "json")
-        let rawData = try? Data(contentsOf: URL(fileURLWithPath: pathForJsonFile!))
-        let parsedJSONData = try! JSONSerialization.jsonObject(with: rawData!, options: .allowFragments) as! [[String: Int]]
-        for versesNumber in parsedJSONData {
-            self.numberOfVersesArray.append(versesNumber["NumberofVerses"]!)
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getSurasNamesFromJSON(fileName: "suraNames")
-        getVersesNumbersFromJSON(fileName: "numberOfVerses")
+        //Register the table cell object
+        let cellNib = UINib(nibName: "TableViewCell", bundle: nil)
+        self.tableView.register(cellNib, forCellReuseIdentifier: "cell")
+        
+        getSurasFromJSON(fileName: "suraNames")
         
     }
     
@@ -54,11 +54,15 @@ class SurasTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "sura", for: indexPath)
-        let suraName = surasNamesArray[indexPath.row]
-        cell.textLabel?.text = suraName
-        cell.backgroundColor = UIColor.green;
+       //Creating the table cells
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        cell.SuraName.text = surasNamesArray[indexPath.row]
+        cell.chapterNumber.text = surasChapterArray[indexPath.row]
+        let test = surasTypeArray[indexPath.row] as Int
+        if test == 0
+        {cell.typeImage.image = #imageLiteral(resourceName: "kaaba")}
+        else
+        {cell.typeImage.image = #imageLiteral(resourceName: "madina")}
         return cell
     }
     
@@ -81,7 +85,6 @@ extension SurasTableViewController: UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        print(versesNumber)
         return versesNumber
     }
     
@@ -92,7 +95,7 @@ extension SurasTableViewController: UIPickerViewDelegate, UIPickerViewDataSource
     func inistansiatePickerViewController() {
         let vc = UIViewController()
         vc.preferredContentSize = CGSize(width: 250,height: 250)
-
+        
         let alert = UIAlertController(title: "Select Verses", message: "From \t To\n\n", preferredStyle: UIAlertControllerStyle.alert)
         alert.isModalInPopover = true
         alert.setValue(vc, forKey: "contentViewController")
@@ -105,8 +108,6 @@ extension SurasTableViewController: UIPickerViewDelegate, UIPickerViewDataSource
             //Perform Action
             let from = Int(pickerFrame.selectedRow(inComponent: 0))+1
             let to = Int(pickerFrame.selectedRow(inComponent: 1))+1
-            print(from)
-            print(to)
             if(from > to)
             {
                 let alert = UIAlertController(title: "Wrong Input", message: "'From' value must be less than or equal to 'To' value", preferredStyle: .alert)
@@ -122,16 +123,15 @@ extension SurasTableViewController: UIPickerViewDelegate, UIPickerViewDataSource
                 let versesWithoutTashkel = searchQuranByVoiceVC?.GetVerses(SoraName: self.suraName, start: from, end: to, flag: 0)
                 searchQuranByVoiceVC?.retriev = versesWithoutTashkel!
                 let ChId  = searchQuranByVoiceVC?.GetChapterId(SoraName: self.suraName, start: from, end: to)
-   
+                
                 let quranReadingVC = self.storyboard?.instantiateViewController(withIdentifier: "QuranReading") as? QuranReadingViewController
                 quranReadingVC?.selectedVerses = stringCompare!
                 quranReadingVC?.suraName = self.suraName
                 quranReadingVC?.from = from
                 quranReadingVC?.to = to
                 quranReadingVC?.ChapterID = ChId!
-//                quranReadingVC?.suraNameLabel.text = self.suraName
                 self.navigationController?.pushViewController(quranReadingVC!, animated: true)
-
+                
             }
         })
         alert.addAction(okAction)
@@ -141,3 +141,4 @@ extension SurasTableViewController: UIPickerViewDelegate, UIPickerViewDataSource
     }
     
 }
+
