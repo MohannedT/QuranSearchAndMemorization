@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class PrayerTimesTableViewController: UITableViewController {
+class PrayerTimesTableViewController: UITableViewController, CLLocationManagerDelegate {
 
     @IBOutlet var prayerTimesTableView: UITableView!
     @IBOutlet weak var fajrTimeLabel: UILabel!
@@ -21,19 +22,37 @@ class PrayerTimesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchPrayTimesFromApi()
-        prayerTimesTableView.reloadData()
+        
+        let locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
+        var currentLocation: CLLocation!
+        
+        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways) {
+            currentLocation = locationManager.location
+            print(currentLocation.coordinate.latitude)
+            print(currentLocation.coordinate.longitude)
+            print(currentLocation.altitude)
+            fetchPrayTimesFromApi(long: currentLocation.coordinate.longitude,
+                                  lat: currentLocation.coordinate.latitude,
+                                  elevation: currentLocation.altitude)
+        }
+
+        performUIUpdatesOnMain {
+            self.prayerTimesTableView.reloadData()
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+        }
     }
     
-    func fetchPrayTimesFromApi() {
+    func fetchPrayTimesFromApi(long: Double, lat: Double, elevation: Double) {
         activityIndicator.startAnimating()
-        Client.shared().getDataFromURL(userCity: "Cairo", completionHandler: {(dateTimeData, error) in
-            self.performUIUpdatesOnMain {
-                self.activityIndicator.stopAnimating()
-                self.activityIndicator.isHidden = true
-                
+        Client.shared().getDataFromURL(longitude: long, latitude: lat, elevation: elevation, completionHandler: {(dateTimeData, error) in
+            
+            if let error = error {
+                self.showAlertController(withTitle: "Error fetching Pray times", withMessage: error.localizedDescription)
             }
-            if let timeData = dateTimeData {
+            
+            else if let timeData = dateTimeData {
                 self.performUIUpdatesOnMain {
                     self.fajrTimeLabel.text = timeData.times.Fajr
                     self.sunshineTimeLabel.text = timeData.times.Sunrise
@@ -41,15 +60,8 @@ class PrayerTimesTableViewController: UITableViewController {
                     self.asrTimeLabel.text = timeData.times.Asr
                     self.maghribTimeLabel.text = timeData.times.Maghrib
                     self.ishaTimeLabel.text = timeData.times.Isha
-                    
-                    self.prayerTimesTableView.reloadData()
                 }
             }
-            else if let error = error {
-                print(error.localizedDescription)
-                return
-            }            
         })
     }
-
 }

@@ -47,7 +47,7 @@ struct LocationData: Decodable {
     let latitude: Double
     let longitude: Double
     let elevation: Double
-    let city: String
+    //let city: String
     let country: String
     let country_code: String
     let timezone: String

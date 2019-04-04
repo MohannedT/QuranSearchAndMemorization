@@ -92,10 +92,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
-                            <tableViewSection headerTitle="Today's Pray Times " id="abr-Tf-B8N">
+                            <tableViewSection id="yhW-hy-0X7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="sxu-mN-h2q">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sxu-mN-h2q" id="oj7-Sg-1lS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
@@ -136,7 +136,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="dvs-Xy-6ta">
-                                        <rect key="frame" x="0.0" y="128" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="100" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dvs-Xy-6ta" id="5Pw-p4-yMp">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
@@ -177,7 +177,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="bgK-di-YBe">
-                                        <rect key="frame" x="0.0" y="228" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="200" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bgK-di-YBe" id="iPU-d8-RFZ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
@@ -223,7 +223,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="eg6-cc-1Vb">
-                                        <rect key="frame" x="0.0" y="328" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="300" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eg6-cc-1Vb" id="JJ8-Ns-edS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
@@ -264,7 +264,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="jbE-Ij-hv7">
-                                        <rect key="frame" x="0.0" y="428" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="400" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jbE-Ij-hv7" id="9Lv-jF-z3x">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
@@ -305,7 +305,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="Jqb-CN-sAT">
-                                        <rect key="frame" x="0.0" y="528" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="500" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jqb-CN-sAT" id="KLR-A6-OwW">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
@@ -358,11 +358,11 @@
                         <outlet property="activityIndicator" destination="N7g-U5-d1B" id="466-bc-iix"/>
                         <outlet property="asrTimeLabel" destination="GWz-HS-YDF" id="MaM-9B-z8v"/>
                         <outlet property="dhuhrTimeLabel" destination="55O-DU-4ph" id="QYt-ne-VAw"/>
-                        <outlet property="fajrTimeLabel" destination="PXG-FV-YIX" id="rfh-LA-R4n"/>
+                        <outlet property="fajrTimeLabel" destination="PXG-FV-YIX" id="3eJ-tS-iNT"/>
                         <outlet property="ishaTimeLabel" destination="xN1-qs-8Gh" id="9Hj-HM-uJz"/>
                         <outlet property="maghribTimeLabel" destination="rLZ-sh-jEv" id="nxP-0V-kCr"/>
                         <outlet property="prayerTimesTableView" destination="sZH-ZY-PlI" id="9Oj-8m-tJW"/>
-                        <outlet property="sunshineTimeLabel" destination="dj3-tv-aKr" id="nkE-u3-HKP"/>
+                        <outlet property="sunshineTimeLabel" destination="dj3-tv-aKr" id="aqw-VF-DpH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RoJ-RN-h3K" userLabel="First Responder" sceneMemberID="firstResponder"/>

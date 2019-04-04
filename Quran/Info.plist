@@ -59,5 +59,9 @@
 	<array>
 		<string>UthmanTN1Ver10.otf</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We try to get your location to update you with Today&apos;s Pray Times</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We try to get your location to update you with Today&apos;s Pray Times</string>
 </dict>
 </plist>

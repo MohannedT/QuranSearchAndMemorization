@@ -22,26 +22,50 @@ class Client: NSObject {
         return Singleton.shared
     }
     
-    let urlString = "https://api.pray.zone/v2/times/today.json?city="
-    
-    func getDataFromURL(userCity: String, completionHandler: @escaping (_ result: DateTimeData?, _ error: NSError?) -> Void) {
-        let url = URL(string: urlString+userCity)
-        URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            if error != nil {
-                print(error!.localizedDescription)
-            } else {
-                do {
-                    let result = try JSONDecoder().decode(MyData.self, from: data!)
-                    let results = result.results
-                    let dateTime = results.datetime
-                    let times = dateTime[0]
-                    print(type(of: times.times))
-                    completionHandler(times, nil)
-                    
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
+
+    func getDataFromURL(longitude: Double, latitude: Double, elevation: Double, completionHandler: @escaping (_ result: DateTimeData?, _ error: NSError?) -> Void) {
+        //let url = URL(string: urlString+userCity)
+        let url = buildURLFromParameters(["longitude": String(longitude),
+                                          "latitude": String(latitude),
+                                          "elevation": String(elevation),
+                                          "timeformat": "1"
+                                          ])
+
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            func sendError(_ error: String) {
+                print(error)
+                let userInfo = [NSLocalizedDescriptionKey: error]
+                completionHandler(nil, NSError(domain: "getDataFromURL", code: 1, userInfo: userInfo))
             }
+            
+            guard (error == nil) else {
+                sendError("An error happened with your request: \(error!.localizedDescription)")
+                return
+            }
+            
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+                sendError("Your request returned status code other than 2XX!")
+                return
+            }
+            
+            guard let data = data else {
+                sendError("No Data returned from your Request")
+                return
+            }
+            
+            do {
+                let result = try JSONDecoder().decode(MyData.self, from: data)
+                print(result)
+                let results = result.results
+                let dateTime = results.datetime
+                let times = dateTime[0]
+                print("done")
+                completionHandler(times, nil)
+                } catch let error as NSError {
+                    sendError("An Error happend while decoding data: \(error.localizedDescription)")
+                }
+            
         }.resume()
         
     }
@@ -57,6 +81,7 @@ class Client: NSObject {
             let queryItem = URLQueryItem(name: key, value: value)
             components.queryItems?.append(queryItem)
         }
+        print(components.url!)
         return components.url!
     }
 }
