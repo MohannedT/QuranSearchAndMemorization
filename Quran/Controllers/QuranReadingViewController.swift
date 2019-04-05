@@ -27,7 +27,8 @@ class QuranReadingViewController: UIViewController {
 //        }
 //        SuraVersesTextView.font = UIFontMetrics.default.scaledFont(for: uthmanFont)
 //        SuraVersesTextView.adjustsFontForContentSizeCategory = true
-        
+        print(from)
+        print(to)
         SuraVersesTextView.text = selectedVerses
         suraNameLabel.text = suraName
         chapterNumberLabel.text = " الجزء (\(ChapterID!))"
@@ -36,7 +37,7 @@ class QuranReadingViewController: UIViewController {
 
     @IBAction func onClickStartRecitationButton(_ sender: UIButton) {
         let recitationVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchQuranByVoice") as? SearchQuranByVoiceViewController
-//        recitationVC?.retriev = recitationVC?.GetVerses(SoraName: suraName, start: from, end: to, flag: 0) ?? ""
+        recitationVC?.retriev = recitationVC?.GetVerses(SoraName: suraName, start: from, end: to, flag: 0) ?? ""
         self.navigationController?.pushViewController(recitationVC!, animated: true)
     }
     
