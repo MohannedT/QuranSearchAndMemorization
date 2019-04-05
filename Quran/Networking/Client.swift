@@ -22,8 +22,47 @@ class Client: NSObject {
         return Singleton.shared
     }
     
+    func getDataFromURLUsingCity(city: String, completionHandler: @escaping (_ result: CityDateTimeData?, _ error: NSError?) -> Void) {
+        let url = buildURLFromParameters(["city": city])
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            func sendError(_ error: String) {
+                print(error)
+                let userInfo = [NSLocalizedDescriptionKey: error]
+                completionHandler(nil, NSError(domain: "getDataFromURLUsingCity", code: 1, userInfo: userInfo))
+            }
+            
+            guard (error == nil) else {
+                sendError("An error happened with your request: \(error!.localizedDescription)")
+                return
+            }
+            
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+                sendError("Your request returned status code other than 2XX!")
+                
+                return
+            }
+            
+            guard let data = data else {
+                sendError("No Data returned from your Request")
+                return
+            }
+            
+            do {
+                let result = try JSONDecoder().decode(PrayTimesDataCity.self, from: data)
+                let results = result.results
+                let dateTime = results.datetime
+                let times = dateTime[0]
+                completionHandler(times, nil)
+            } catch let error as NSError {
+                sendError("An Error happend while decoding data: \(error.localizedDescription)")
+            }
+            
+        }.resume()
+    }
+    
 
-    func getDataFromURL(longitude: Double, latitude: Double, elevation: Double, completionHandler: @escaping (_ result: DateTimeData?, _ error: NSError?) -> Void) {
+    func getDataFromURLUsingLocation(longitude: Double, latitude: Double, elevation: Double, completionHandler: @escaping (_ result: DateTimeData?, _ error: NSError?) -> Void) {
         //let url = URL(string: urlString+userCity)
         let url = buildURLFromParameters(["longitude": String(longitude),
                                           "latitude": String(latitude),
@@ -36,7 +75,7 @@ class Client: NSObject {
             func sendError(_ error: String) {
                 print(error)
                 let userInfo = [NSLocalizedDescriptionKey: error]
-                completionHandler(nil, NSError(domain: "getDataFromURL", code: 1, userInfo: userInfo))
+                completionHandler(nil, NSError(domain: "getDataFromURLUsingLocation", code: 1, userInfo: userInfo))
             }
             
             guard (error == nil) else {
@@ -55,7 +94,7 @@ class Client: NSObject {
             }
             
             do {
-                let result = try JSONDecoder().decode(MyData.self, from: data)
+                let result = try JSONDecoder().decode(PrayTimesDataLocation.self, from: data)
                 print(result)
                 let results = result.results
                 let dateTime = results.datetime

@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct MyData: Decodable {
+struct PrayTimesDataLocation: Decodable {
     let code: Int
     let status: String
     let results: ResultsData
