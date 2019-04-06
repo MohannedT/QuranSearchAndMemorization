@@ -118,18 +118,14 @@ extension SurasTableViewController: UIPickerViewDelegate, UIPickerViewDataSource
             }
             else
             {
-                let searchQuranByVoiceVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchQuranByVoice") as? SearchQuranByVoiceViewController
-                let stringCompare = searchQuranByVoiceVC?.GetVerses(SoraName: self.suraName, start: from, end: to , flag: 1)
-                let ChId  = searchQuranByVoiceVC?.GetChapterId(SoraName: self.suraName, start: from, end: to)
-                
                 let quranReadingVC = self.storyboard?.instantiateViewController(withIdentifier: "QuranReading") as? QuranReadingViewController
-                quranReadingVC?.selectedVerses = stringCompare!
+                quranReadingVC?.selectedVerses = self.GetVerses(SoraName: self.suraName, start: from, end: to , flag: 1)
                 quranReadingVC?.suraName = self.suraName
                 quranReadingVC?.from = from
                 quranReadingVC?.to = to
-                quranReadingVC?.ChapterID = ChId!
+                quranReadingVC?.ChapterID = self.GetChapterId(SoraName: self.suraName, start: from, end: to)
+                quranReadingVC?.selectedVersesWithoutTashkel = self.GetVerses(SoraName: self.suraName, start: from, end: to, flag: 0)
                 self.navigationController?.pushViewController(quranReadingVC!, animated: true)
-                
             }
         })
         alert.addAction(okAction)

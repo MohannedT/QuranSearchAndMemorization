@@ -7,18 +7,37 @@
 //
 
 import UIKit
+import Speech
 
-class QuranReadingViewController: UIViewController {
+class QuranReadingViewController: UIViewController, SFSpeechRecognizerDelegate {
 
     @IBOutlet weak var suraNameLabel: UILabel!
     @IBOutlet weak var chapterNumberLabel: UILabel!
     @IBOutlet weak var SuraVersesTextView: UITextView!
+    @IBOutlet weak var microphoneButton: UIButton!
+    
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ar-SA"))
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private var recognitionTask: SFSpeechRecognitionTask?
+    private let audioEngine = AVAudioEngine()
+    
     var selectedVerses = ""
     var selectedVersesWithoutTashkel = ""
     var from = 0
     var to = 0
     var suraName = ""
     var ChapterID: String?
+    var userSayingArray: [String] = []
+    
+    var retriev = ""
+    var versesplus = ""
+    var ArrayA : [String] = []
+    var ArrayB : [String] = []
+    var arr : [String] = []
+    var finalResult : String = ""
+
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,19 +46,140 @@ class QuranReadingViewController: UIViewController {
 //        }
 //        SuraVersesTextView.font = UIFontMetrics.default.scaledFont(for: uthmanFont)
 //        SuraVersesTextView.adjustsFontForContentSizeCategory = true
-        print(from)
-        print(to)
         SuraVersesTextView.text = selectedVerses
         suraNameLabel.text = suraName
         chapterNumberLabel.text = " الجزء (\(ChapterID!))"
+        
+        
+        microphoneButton.isEnabled = false
+        speechRecognizer?.delegate = self
+        
+        SFSpeechRecognizer.requestAuthorization { (authStatus) in
+            var isButtonEnabled = false
+            
+            switch authStatus {
+            case .authorized:
+                isButtonEnabled = true
+            case .notDetermined:
+                isButtonEnabled = false
+                print("not authorized yet")
+            case .denied:
+                isButtonEnabled = false
+                print("user denied access to speech recognition")
+            case .restricted:
+                isButtonEnabled = false
+                print("speech recognition is restricted on this device")
+            }
+            
+            OperationQueue.main.addOperation {
+                self.microphoneButton.isEnabled = isButtonEnabled
+            }
+        }
+
+        
     }
 
 
     @IBAction func onClickStartRecitationButton(_ sender: UIButton) {
-        let recitationVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchQuranByVoice") as? SearchQuranByVoiceViewController
-        recitationVC?.retriev = recitationVC?.GetVerses(SoraName: suraName, start: from, end: to, flag: 0) ?? ""
-        self.navigationController?.pushViewController(recitationVC!, animated: true)
+        performUIUpdatesOnMain {
+            self.SuraVersesTextView.text = nil
+        }
+        
+        retriev = GetVerses(SoraName: suraName, start: from, end: to, flag: 0)
+        print(retriev)
+        
+        if audioEngine.isRunning {
+            audioEngine.stop()
+            recognitionRequest?.endAudio()
+            microphoneButton.isEnabled = false
+            microphoneButton.setImage(UIImage(named: "Record.png"), for: .normal)
+            
+        } else {
+            startRecording()
+            microphoneButton.setImage(UIImage(named: "Stop.png"), for: .normal)
+        }
     }
     
+    
+    func startRecording(){
+        if recognitionTask != nil {
+            recognitionTask?.cancel()
+            recognitionTask = nil
+        }
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(AVAudioSessionCategoryRecord)
+            try audioSession.setMode(AVAudioSessionModeMeasurement)
+            try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
+        }
+        catch {
+            print("audioSession properties weren't set because of an error")
+        }
+        
+        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        
+        let inputNode = audioEngine.inputNode
+        
+        guard let recognitionRequest = recognitionRequest else {
+            fatalError("Unable to create an SFSpeechAudioBufferRecognitionRequest object")
+        }
+        recognitionRequest.shouldReportPartialResults = true
+        
+        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: {(result, error) in
+            var isFinal = false
+            if result != nil {
+                self.SuraVersesTextView.text = result?.bestTranscription.formattedString
+                self.userSayingArray = (result?.bestTranscription.formattedString.components(separatedBy: " "))!
+               // self.userSayingArray = ["بسم", "الل", "الرحمن", "الرحمة"]
+                
+                let correctUserWords = self.longestCommonSubsequence(self.userSayingArray, sec: self.selectedVersesWithoutTashkel.components(separatedBy: " "))
+                print("----------THIS IS THE CORRECT WORDS WHICH THE USER SAID :-----------")
+                print(correctUserWords)
+                
+                isFinal = (result?.isFinal)!
+            }
+            
+            if error != nil || isFinal {
+                self.audioEngine.stop()
+                inputNode.removeTap(onBus: 0)
+                
+                self.recognitionRequest = nil
+                self.recognitionTask = nil
+                self.microphoneButton.isEnabled = true
+            }
+        })
+        
+        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
+            self.recognitionRequest?.append(buffer)
+        }
+        
+        audioEngine.prepare()
+        
+        do {
+            try audioEngine.start()
+        } catch {
+            print("audioEngine Couldn't start because of an error")
+        }
+        
+        SuraVersesTextView.text = "Start Recitating.."
+    }
 
+    
+
+}
+
+
+
+extension QuranReadingViewController {
+    
+    func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
+        if available {
+            microphoneButton.isEnabled = true
+        }
+        else {
+            microphoneButton.isEnabled = false
+        }
+    }
 }
