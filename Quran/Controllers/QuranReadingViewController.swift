@@ -28,7 +28,7 @@ class QuranReadingViewController: UIViewController, SFSpeechRecognizerDelegate {
     var suraName = ""
     var ChapterID: String?
     var userSayingArray: [String] = []
-    
+    var tempArray : [String] = []
     var retriev = ""
     var versesplus = ""
     var ArrayA : [String] = []
@@ -93,7 +93,26 @@ class QuranReadingViewController: UIViewController, SFSpeechRecognizerDelegate {
             recognitionRequest?.endAudio()
             microphoneButton.isEnabled = false
             microphoneButton.setImage(UIImage(named: "Record.png"), for: .normal)
-            
+            let correctUserWords = self.longestCommonSubsequence(self.userSayingArray, sec: self.selectedVersesWithoutTashkel.components(separatedBy: " "))
+            print("----------this user what he said :----------- \n", self.userSayingArray)
+
+            print("----------THIS IS THE CORRECT WORDS WHICH THE USER SAID :-----------")
+            print(correctUserWords)
+            for _ in 0..<self.userSayingArray.count{
+                
+                self.userSayingArray.remove(at: 0)
+                
+            }
+            for _ in 0..<self.tempArray.count{
+                
+                self.tempArray.remove(at: 0)
+                
+            }
+
+            print("----------this user what he after delete :----------- \n", self.userSayingArray ,"\n nothing ?! " )
+            print("----------this tempArray  after delete :----------- \n", self.tempArray ,"\n nothing ?! " )
+
+
         } else {
             startRecording()
             microphoneButton.setImage(UIImage(named: "Stop.png"), for: .normal)
@@ -130,12 +149,16 @@ class QuranReadingViewController: UIViewController, SFSpeechRecognizerDelegate {
             var isFinal = false
             if result != nil {
                 self.SuraVersesTextView.text = result?.bestTranscription.formattedString
-                self.userSayingArray = (result?.bestTranscription.formattedString.components(separatedBy: " "))!
+                self.tempArray = (result?.bestTranscription.formattedString.components(separatedBy: " "))!
+                for _ in 0..<self.tempArray.count-1{
+                    
+                    self.tempArray.remove(at: 0)
+                    
+                }
+                self.userSayingArray.append(self.tempArray[0])
                // self.userSayingArray = ["بسم", "الل", "الرحمن", "الرحمة"]
                 
-                let correctUserWords = self.longestCommonSubsequence(self.userSayingArray, sec: self.selectedVersesWithoutTashkel.components(separatedBy: " "))
-                print("----------THIS IS THE CORRECT WORDS WHICH THE USER SAID :-----------")
-                print(correctUserWords)
+             
                 
                 isFinal = (result?.isFinal)!
             }

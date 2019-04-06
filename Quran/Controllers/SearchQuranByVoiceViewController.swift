@@ -14,10 +14,13 @@ import Foundation
 class SearchQuranByVoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
     var retriev = ""
     var versesplus = ""
+    var versesCompare = ""
     var ArrayA : [String] = []
     var ArrayB : [String] = []
     var arr : [String] = []
     var finalResult : String = ""
+    var compareArray : [String] = []
+
     @IBOutlet weak var recognizedText: UITextView!
     @IBOutlet weak var microphoneButton: UIButton!
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ar-SA"))
@@ -129,10 +132,14 @@ class SearchQuranByVoiceViewController: UIViewController, SFSpeechRecognizerDele
                 self.recognizedText.text = result?.bestTranscription.formattedString
                 self.versesplus = (result?.bestTranscription.formattedString)!
                 self.ArrayB = self.versesplus.components(separatedBy: " ")
-                for _ in 0..<self.ArrayB.count-1{
-
+                for l in 0..<self.ArrayB.count-1{
+                    
                     self.ArrayB.remove(at: 0)
+                    
                 }
+                self.versesCompare = self.versesCompare + " " + self.ArrayB[0]
+             //   self.compareAray.appe
+                print("this is verses compare ", self.versesCompare)
           
                 /* ---------new------- */
                 for i in 0..<1{
