@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,52 +22,48 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="xmY-Sm-Nd4">
-                        <rect key="frame" x="0.0" y="0.0" width="328" height="73"/>
+                        <rect key="frame" x="0.0" y="0.0" width="328" height="79"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jk7-sa-P8w">
-                        <rect key="frame" x="4" y="4" width="88" height="68"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="88" id="dE7-bu-zS2"/>
-                            <constraint firstAttribute="height" constant="68" id="tur-CQ-mPr"/>
-                        </constraints>
+                        <rect key="frame" x="4" y="4" width="78.5" height="68"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aya-green" translatesAutoresizingMaskIntoConstraints="NO" id="SOD-yX-DTW">
                         <rect key="frame" x="169" y="11" width="159" height="53"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="159" id="Yfc-RN-e6c"/>
-                            <constraint firstAttribute="height" constant="53" id="acA-Du-lmw"/>
+                            <constraint firstAttribute="width" constant="159" id="Laa-ZX-qLd"/>
+                            <constraint firstAttribute="height" constant="53" id="P8u-xT-DmL"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sura" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nU1-0r-fky">
-                        <rect key="frame" x="194" y="25" width="111" height="27"/>
+                        <rect key="frame" x="194" y="25" width="111" height="29"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="111" id="6vi-ta-MjM"/>
-                            <constraint firstAttribute="height" constant="27" id="q18-3Z-Pnf"/>
+                            <constraint firstAttribute="width" constant="111" id="Vqi-2a-R1n"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="chapter" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc5-iM-v2e">
-                        <rect key="frame" x="121" y="29.5" width="47" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <rect key="frame" x="127.5" y="29.5" width="40.5" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="jk7-sa-P8w" firstAttribute="top" secondItem="N1O-aL-R9D" secondAttribute="top" constant="4" id="Na2-qd-XQR"/>
-                    <constraint firstAttribute="trailing" secondItem="SOD-yX-DTW" secondAttribute="trailing" id="RmH-8T-Edy"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="nU1-0r-fky" secondAttribute="trailing" constant="7" id="YeF-Ob-5hh"/>
-                    <constraint firstItem="SOD-yX-DTW" firstAttribute="top" secondItem="N1O-aL-R9D" secondAttribute="top" constant="11" id="aCd-4i-Vg6"/>
-                    <constraint firstItem="nU1-0r-fky" firstAttribute="top" secondItem="N1O-aL-R9D" secondAttribute="topMargin" constant="14" id="d6u-u3-FvR"/>
-                    <constraint firstAttribute="bottom" secondItem="jk7-sa-P8w" secondAttribute="bottom" constant="2.5" id="f3o-NJ-Mdw"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="nU1-0r-fky" secondAttribute="bottom" constant="12" id="j1r-p0-DqG"/>
-                    <constraint firstItem="Fc5-iM-v2e" firstAttribute="centerY" secondItem="N1O-aL-R9D" secondAttribute="centerY" id="l0h-xc-hdT"/>
-                    <constraint firstItem="jk7-sa-P8w" firstAttribute="centerY" secondItem="N1O-aL-R9D" secondAttribute="centerY" id="ogw-6J-7P3"/>
-                    <constraint firstItem="SOD-yX-DTW" firstAttribute="leading" secondItem="Fc5-iM-v2e" secondAttribute="trailing" constant="1" id="oqT-Zl-1hq"/>
-                    <constraint firstItem="jk7-sa-P8w" firstAttribute="leading" secondItem="N1O-aL-R9D" secondAttribute="leading" constant="4" id="uEC-8F-vg8"/>
+                    <constraint firstItem="nU1-0r-fky" firstAttribute="top" secondItem="N1O-aL-R9D" secondAttribute="topMargin" constant="14" id="BlR-5C-N6Y"/>
+                    <constraint firstItem="jk7-sa-P8w" firstAttribute="leading" secondItem="N1O-aL-R9D" secondAttribute="leading" constant="4" id="Hi3-e3-tZ2"/>
+                    <constraint firstItem="SOD-yX-DTW" firstAttribute="leading" secondItem="Fc5-iM-v2e" secondAttribute="trailing" constant="1" id="HvW-yk-pWF"/>
+                    <constraint firstAttribute="trailing" secondItem="SOD-yX-DTW" secondAttribute="trailing" id="JUJ-Q3-JN7"/>
+                    <constraint firstItem="jk7-sa-P8w" firstAttribute="width" secondItem="N1O-aL-R9D" secondAttribute="width" multiplier="0.24" id="Q3O-pH-DJ1"/>
+                    <constraint firstItem="nU1-0r-fky" firstAttribute="top" secondItem="N1O-aL-R9D" secondAttribute="topMargin" constant="14" id="XSB-Re-1pd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="nU1-0r-fky" secondAttribute="trailing" constant="7" id="ffq-eA-W0a"/>
+                    <constraint firstItem="SOD-yX-DTW" firstAttribute="top" secondItem="N1O-aL-R9D" secondAttribute="top" constant="11" id="htO-8A-o2T"/>
+                    <constraint firstAttribute="bottom" secondItem="jk7-sa-P8w" secondAttribute="bottom" constant="2.5" id="oHE-wo-crz"/>
+                    <constraint firstItem="Fc5-iM-v2e" firstAttribute="top" secondItem="N1O-aL-R9D" secondAttribute="topMargin" constant="18.5" id="ofj-rK-vQY"/>
+                    <constraint firstItem="jk7-sa-P8w" firstAttribute="top" secondItem="N1O-aL-R9D" secondAttribute="top" constant="4" id="rHs-n0-xWv"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="nU1-0r-fky" secondAttribute="trailing" constant="7" id="xe7-SW-BEo"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="19j-qh-DNN"/>
