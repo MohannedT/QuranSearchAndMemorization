@@ -8,9 +8,11 @@
 
 import UIKit
 
-class SurasTableViewController: UITableViewController {
+class SurasTableViewController: UITableViewController,UISearchBarDelegate {
+    
     
     @IBOutlet var suarTableView: UITableView!
+    @IBOutlet var searchBar: UISearchBar!
     var surasNamesArray = [String]()
     var numberOfVersesArray = [Int]()
     var surasTypeArray = [Int]()
@@ -18,6 +20,8 @@ class SurasTableViewController: UITableViewController {
     var versesNumber = 0
     var versesArray = [Int]()
     var suraName = ""
+    var isSearching = false
+    var searchingResult = [[String]]()
     
     func getSurasFromJSON(fileName: String) {
         let pathForJsonFile = Bundle.main.path(forResource: fileName, ofType: "json")
@@ -36,10 +40,21 @@ class SurasTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Register the table cell object
-        let cellNib = UINib(nibName: "TableViewCell", bundle: nil)
-        self.tableView.register(cellNib, forCellReuseIdentifier: "cell")
+  
+        
+        let tableCell = UINib(nibName: "TableViewCell", bundle: nil)
+        
+        self.tableView.register(tableCell, forCellReuseIdentifier: "cell")
+        
+        let searchingCell = UINib(nibName: "SearchViewCell", bundle: nil)
+        
+        self.tableView.register(searchingCell, forCellReuseIdentifier: "SearchCell")
+        
+  
         
         getSurasFromJSON(fileName: "suraNames")
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.done
         
     }
     
@@ -48,36 +63,76 @@ class SurasTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isSearching{
+            return searchingResult.count
+        }
         return surasNamesArray.count
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if isSearching{
+            return UITableViewAutomaticDimension
+        }
         return 75
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       //Creating the table cells
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
-        cell.SuraName.text = surasNamesArray[indexPath.row]
-        cell.chapterNumber.text = surasChapterArray[indexPath.row]
-        let test = surasTypeArray[indexPath.row] as Int
-        if test == 0
-        {cell.typeImage.image = #imageLiteral(resourceName: "kaaba")}
-        else
-        {cell.typeImage.image = #imageLiteral(resourceName: "madina")}
-        return cell
+        //Creating the table cells
+        
+        if isSearching
+        {
+            let searchingCell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchViewCell
+            searchingCell.searchSuraName.text =  searchingResult[indexPath.row][4]
+            searchingCell.chapter.text = "الجزء رقم"
+            searchingCell.CN.text = searchingResult[indexPath.row][0]
+            searchingCell.searchVerse.text = searchingResult[indexPath.row][3]
+            return searchingCell
+            
+        }
+        else{
+            let  tableCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+            tableCell.suraName.text = surasNamesArray[indexPath.row]
+            tableCell.chapterNumber.text = surasChapterArray[indexPath.row]
+            let test = surasTypeArray[indexPath.row] as Int
+            if test == 0
+            {tableCell.typeImage.image = #imageLiteral(resourceName: "kaaba")}
+            else
+            {tableCell.typeImage.image = #imageLiteral(resourceName: "madina")}
+            return tableCell
+        }
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if !isSearching
+        {
+            self.suraName = surasNamesArray[indexPath.row]
+            self.versesNumber = numberOfVersesArray[indexPath.row]
+            for i in (1...versesNumber)
+            {
+                versesArray.append(i)
+            }
         
-        self.suraName = surasNamesArray[indexPath.row]
-        self.versesNumber = numberOfVersesArray[indexPath.row]
-        for i in (1...versesNumber) {
-            versesArray.append(i)
+            inistansiatePickerViewController()
         }
-        
-        inistansiatePickerViewController()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == ""
+        {
+            isSearching = false
+            view.endEditing(true)
+            tableView.reloadData()
+        }
+        else
+        {
+            isSearching = true
+            // caling the search func
+              let searchByQuranVC = storyboard?.instantiateViewController(withIdentifier: "SearchQuranByVoice") as! SearchQuranByVoiceViewController
+            searchingResult = searchByQuranVC.SearchForWord(Word: searchBar.text!)
+            tableView.reloadData()
+        }
     }
 }
 

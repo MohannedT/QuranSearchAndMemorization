@@ -22,7 +22,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="xmY-Sm-Nd4">
-                        <rect key="frame" x="0.0" y="0.0" width="328" height="79"/>
+                        <rect key="frame" x="0.0" y="0.0" width="328" height="78"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jk7-sa-P8w">
@@ -68,11 +68,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="19j-qh-DNN"/>
             <connections>
-                <outlet property="SuraName" destination="nU1-0r-fky" id="teb-5D-vAd"/>
                 <outlet property="chapterNumber" destination="Fc5-iM-v2e" id="Q9l-G9-7gy"/>
+                <outlet property="suraName" destination="nU1-0r-fky" id="lWs-nO-uqd"/>
                 <outlet property="typeImage" destination="jk7-sa-P8w" id="pOy-0D-QSs"/>
             </connections>
-            <point key="canvasLocation" x="28" y="69.5"/>
+            <point key="canvasLocation" x="21" y="11"/>
         </tableViewCell>
     </objects>
     <resources>

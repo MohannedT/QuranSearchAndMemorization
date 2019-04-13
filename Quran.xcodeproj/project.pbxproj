@@ -27,6 +27,8 @@
 		86A9AA012256B3A1007DFEDD /* PrayTimesCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A9AA002256B3A1007DFEDD /* PrayTimesCity.swift */; };
 		86DF2BA622424B0700D6C8E6 /* UthmanTN1Ver10.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86DF2BA322424AA500D6C8E6 /* UthmanTN1Ver10.otf */; };
 		86DF2BAA2242507E00D6C8E6 /* QuranReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF2BA92242507E00D6C8E6 /* QuranReadingViewController.swift */; };
+		C62216F8226027CA00616D8A /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62216F6226027CA00616D8A /* SearchViewCell.swift */; };
+		C62216F9226027CA00616D8A /* SearchViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62216F7226027CA00616D8A /* SearchViewCell.xib */; };
 		C6298DEE21FB45AA00F49575 /* SurasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6298DED21FB45AA00F49575 /* SurasTableViewController.swift */; };
 		C62EE66A2254397C00AE9204 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62EE6682254397C00AE9204 /* TableViewCell.swift */; };
 		C62EE66B2254397C00AE9204 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62EE6692254397C00AE9204 /* TableViewCell.xib */; };
@@ -59,6 +61,8 @@
 		86DF2BA322424AA500D6C8E6 /* UthmanTN1Ver10.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UthmanTN1Ver10.otf; sourceTree = "<group>"; };
 		86DF2BA92242507E00D6C8E6 /* QuranReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranReadingViewController.swift; sourceTree = "<group>"; };
 		8C680D5D3C87C021240E3B31 /* Pods-Quran.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quran.release.xcconfig"; path = "Target Support Files/Pods-Quran/Pods-Quran.release.xcconfig"; sourceTree = "<group>"; };
+		C62216F6226027CA00616D8A /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
+		C62216F7226027CA00616D8A /* SearchViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewCell.xib; sourceTree = "<group>"; };
 		C6298DED21FB45AA00F49575 /* SurasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurasTableViewController.swift; sourceTree = "<group>"; };
 		C62EE6682254397C00AE9204 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C62EE6692254397C00AE9204 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 		861D49792216531700CF3449 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C62216F6226027CA00616D8A /* SearchViewCell.swift */,
+				C62216F7226027CA00616D8A /* SearchViewCell.xib */,
 				860F68DE217AA40E00627AB4 /* Main.storyboard */,
 				C62EE6682254397C00AE9204 /* TableViewCell.swift */,
 				C62EE6692254397C00AE9204 /* TableViewCell.xib */,
@@ -277,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86DF2BA622424B0700D6C8E6 /* UthmanTN1Ver10.otf in Resources */,
+				C62216F9226027CA00616D8A /* SearchViewCell.xib in Resources */,
 				860F68E5217AA40E00627AB4 /* LaunchScreen.storyboard in Resources */,
 				8656014222024DAA00A721F5 /* suraNames.json in Resources */,
 				C62EE66B2254397C00AE9204 /* TableViewCell.xib in Resources */,
@@ -321,6 +328,7 @@
 				C6298DEE21FB45AA00F49575 /* SurasTableViewController.swift in Sources */,
 				860F68D9217AA40E00627AB4 /* AppDelegate.swift in Sources */,
 				861D497622163A6A00CF3449 /* AyaTableViewCell.swift in Sources */,
+				C62216F8226027CA00616D8A /* SearchViewCell.swift in Sources */,
 				867B428E22519A86009DF490 /* ViewController+Extension.swift in Sources */,
 				86A9AA012256B3A1007DFEDD /* PrayTimesCity.swift in Sources */,
 				86DF2BAA2242507E00D6C8E6 /* QuranReadingViewController.swift in Sources */,

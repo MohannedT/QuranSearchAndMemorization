@@ -438,7 +438,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.90274101500000004" green="0.8105487227" blue="0.5923563838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MeS-5f-NiP" firstAttribute="trailing" secondItem="X87-D5-v0F" secondAttribute="trailing" id="0Qw-Ae-DcP"/>
                             <constraint firstItem="MeS-5f-NiP" firstAttribute="top" secondItem="X87-D5-v0F" secondAttribute="top" id="ODV-aS-wtx"/>
@@ -496,7 +496,15 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZN9-bt-s0K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.88845366239547729" green="0.80328130722045898" blue="0.59200590848922729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" semanticContentAttribute="playback" barStyle="black" text="" placeholder="search for verse" backgroundImage="Bar" id="YS9-QX-4xm">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <rect key="contentStretch" x="0.0" y="0.0" width="0.59999999999999998" height="0.45000000000000001"/>
+                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <connections>
                             <outlet property="dataSource" destination="f9b-rz-DQL" id="HBY-J4-3hf"/>
                             <outlet property="delegate" destination="f9b-rz-DQL" id="6cu-fm-cZo"/>
@@ -505,12 +513,22 @@
                     <tabBarItem key="tabBarItem" title="Recitation" id="YSU-16-zrg"/>
                     <navigationItem key="navigationItem" id="Dbf-OL-Wnh"/>
                     <connections>
+                        <outlet property="searchBar" destination="YS9-QX-4xm" id="wc9-vn-EoW"/>
+                        <outlet property="searchDisplayController" destination="Kss-S0-fAL" id="eLR-Bn-rU6"/>
                         <outlet property="suarTableView" destination="ZN9-bt-s0K" id="7tS-ac-5Fe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJx-eq-ZtH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Kss-S0-fAL">
+                    <connections>
+                        <outlet property="delegate" destination="f9b-rz-DQL" id="sUv-Vn-C8j"/>
+                        <outlet property="searchContentsController" destination="f9b-rz-DQL" id="AUm-fK-BBw"/>
+                        <outlet property="searchResultsDataSource" destination="f9b-rz-DQL" id="Z1V-6L-t94"/>
+                        <outlet property="searchResultsDelegate" destination="f9b-rz-DQL" id="Der-F1-jbc"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="889" y="458"/>
+            <point key="canvasLocation" x="888.79999999999995" y="457.42128935532236"/>
         </scene>
         <!--Quran Reading View Controller-->
         <scene sceneID="Ydm-gA-ihK">
@@ -600,6 +618,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Bar" width="318" height="50"/>
         <image name="asr" width="83" height="83"/>
         <image name="dhuhr" width="50" height="50"/>
         <image name="fajr" width="83" height="83"/>

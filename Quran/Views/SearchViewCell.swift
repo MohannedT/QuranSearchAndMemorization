@@ -1,29 +1,30 @@
 //
-//  TableViewCell.swift
+//  SearchViewCell.swift
 //  Quran
 //
-//  Created by Ahmed KKhattab on 4/3/19.
+//  Created by Ahmed KKhattab on 4/12/19.
 //  Copyright © 2019 Eyad Shokry. All rights reserved.
 //
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class SearchViewCell: UITableViewCell {
     
-    @IBOutlet weak var suraName: UILabel!
-    @IBOutlet weak var chapterNumber: UILabel!
-    @IBOutlet weak var typeImage: UIImageView!
- 
+    @IBOutlet weak var chapter: UILabel!
+    @IBOutlet weak var CN: UILabel!
+    @IBOutlet weak var searchVerse: UITextView!
+    @IBOutlet weak var searchSuraName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
-    
     }
+    
 }
+
