@@ -1,3 +1,4 @@
+
 //
 //  QuranReadingViewController.swift
 //  Quran
@@ -10,7 +11,7 @@ import UIKit
 import Speech
 
 class QuranReadingViewController: UIViewController, SFSpeechRecognizerDelegate {
-
+    
     @IBOutlet weak var suraNameLabel: UILabel!
     @IBOutlet weak var chapterNumberLabel: UILabel!
     @IBOutlet weak var SuraVersesTextView: UITextView!
@@ -35,17 +36,17 @@ class QuranReadingViewController: UIViewController, SFSpeechRecognizerDelegate {
     var ArrayB : [String] = []
     var arr : [String] = []
     var finalResult : String = ""
-
+    var flagButton = true
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        guard let uthmanFont = UIFont(name: "UthmanTN1Ver10", size: UIFont.labelFontSize) else {
-//            fatalError("Faild to load font")
-//        }
-//        SuraVersesTextView.font = UIFontMetrics.default.scaledFont(for: uthmanFont)
-//        SuraVersesTextView.adjustsFontForContentSizeCategory = true
+        //        guard let uthmanFont = UIFont(name: "UthmanTN1Ver10", size: UIFont.labelFontSize) else {
+        //            fatalError("Faild to load font")
+        //        }
+        //        SuraVersesTextView.font = UIFontMetrics.default.scaledFont(for: uthmanFont)
+        //        SuraVersesTextView.adjustsFontForContentSizeCategory = true
         SuraVersesTextView.text = selectedVerses
         suraNameLabel.text = suraName
         chapterNumberLabel.text = " الجزء (\(ChapterID!))"
@@ -62,10 +63,10 @@ class QuranReadingViewController: UIViewController, SFSpeechRecognizerDelegate {
                 isButtonEnabled = true
             case .notDetermined:
                 isButtonEnabled = false
-                print("not authorized yet")
+                print("not authorized yet\n")
             case .denied:
                 isButtonEnabled = false
-                print("user denied access to speech recognition")
+                print("user denied access to speech recognition\n")
             case .restricted:
                 isButtonEnabled = false
                 print("speech recognition is restricted on this device")
@@ -75,47 +76,45 @@ class QuranReadingViewController: UIViewController, SFSpeechRecognizerDelegate {
                 self.microphoneButton.isEnabled = isButtonEnabled
             }
         }
-
+        
         
     }
-
-
+    
+    
     @IBAction func onClickStartRecitationButton(_ sender: UIButton) {
+        //if (self.flagButton == true ){
+        
         performUIUpdatesOnMain {
             self.SuraVersesTextView.text = nil
         }
         
         retriev = GetVerses(SoraName: suraName, start: from, end: to, flag: 0)
-        print(retriev)
+        print("this is retriev " + retriev)
         
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
             microphoneButton.isEnabled = false
             microphoneButton.setImage(UIImage(named: "Record.png"), for: .normal)
-            let correctUserWords = self.longestCommonSubsequence(self.userSayingArray, sec: self.selectedVersesWithoutTashkel.components(separatedBy: " "))
-            print("----------this user what he said :----------- \n", self.userSayingArray)
-
-            print("----------THIS IS THE CORRECT WORDS WHICH THE USER SAID :-----------")
-            print(correctUserWords)
-            for _ in 0..<self.userSayingArray.count{
-                
-                self.userSayingArray.remove(at: 0)
-                
-            }
-            for _ in 0..<self.tempArray.count{
-                
-                self.tempArray.remove(at: 0)
-                
-            }
-
-            print("----------this user what he after delete :----------- \n", self.userSayingArray ,"\n nothing ?! " )
-            print("----------this tempArray  after delete :----------- \n", self.tempArray ,"\n nothing ?! " )
-
-
-        } else {
+            SuraVersesTextView.isEditable = true
+            self.flagButton = false
+            // microphoneButton.isHidden = true
+            microphoneButton.setTitle("confirm", for: .normal)
+            
+        } else if (audioEngine.isRunning == false  && self.flagButton == true) {
+            print(" this is " , self.flagButton)
             startRecording()
             microphoneButton.setImage(UIImage(named: "Stop.png"), for: .normal)
+            self.flagButton = false
+            microphoneButton.setTitle("Stop", for: .normal)
+            
+        }
+        else if (audioEngine.isRunning == false && self.flagButton == false ){
+            userSayingArray = (SuraVersesTextView.text).components(separatedBy: " ")
+            print("this is user sayes " , userSayingArray)
+            let correctUserWords = self.longestCommonSubsequence(self.userSayingArray, sec: self.selectedVersesWithoutTashkel.components(separatedBy: " "))
+            microphoneButton.isHidden = true
+            
         }
     }
     
@@ -148,17 +147,8 @@ class QuranReadingViewController: UIViewController, SFSpeechRecognizerDelegate {
         recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: {(result, error) in
             var isFinal = false
             if result != nil {
-                self.SuraVersesTextView.text = result?.bestTranscription.formattedString
-                self.tempArray = (result?.bestTranscription.formattedString.components(separatedBy: " "))!
-                for _ in 0..<self.tempArray.count-1{
-                    
-                    self.tempArray.remove(at: 0)
-                    
-                }
-                self.userSayingArray.append(self.tempArray[0])
-               // self.userSayingArray = ["بسم", "الل", "الرحمن", "الرحمة"]
                 
-             
+                self.SuraVersesTextView.text = (result?.bestTranscription.formattedString)!
                 
                 isFinal = (result?.isFinal)!
             }
@@ -188,9 +178,9 @@ class QuranReadingViewController: UIViewController, SFSpeechRecognizerDelegate {
         
         SuraVersesTextView.text = "Start Recitating.."
     }
-
     
-
+    
+    
 }
 
 
@@ -206,3 +196,5 @@ extension QuranReadingViewController {
         }
     }
 }
+
+
