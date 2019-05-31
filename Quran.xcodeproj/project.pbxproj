@@ -32,6 +32,7 @@
 		C6298DEE21FB45AA00F49575 /* SurasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6298DED21FB45AA00F49575 /* SurasTableViewController.swift */; };
 		C62EE66A2254397C00AE9204 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62EE6682254397C00AE9204 /* TableViewCell.swift */; };
 		C62EE66B2254397C00AE9204 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62EE6692254397C00AE9204 /* TableViewCell.xib */; };
+		C6A2DAE722A172850046C35D /* QuranResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2DAE622A172850046C35D /* QuranResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		C6298DED21FB45AA00F49575 /* SurasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurasTableViewController.swift; sourceTree = "<group>"; };
 		C62EE6682254397C00AE9204 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C62EE6692254397C00AE9204 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		C6A2DAE622A172850046C35D /* QuranResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		861D4978221652C100CF3449 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C6A2DAE622A172850046C35D /* QuranResultViewController.swift */,
 				C6298DED21FB45AA00F49575 /* SurasTableViewController.swift */,
 				860F68EC217AB7EF00627AB4 /* SearchQuranByVoiceViewController.swift */,
 				861D49712216116300CF3449 /* SearchQuranByTextViewController.swift */,
@@ -337,6 +340,7 @@
 				86223B63224E698200706DAB /* Client.swift in Sources */,
 				86223B60224E67E900706DAB /* Constants.swift in Sources */,
 				86223B75224F96B500706DAB /* PrayerTimesTableViewController.swift in Sources */,
+				C6A2DAE722A172850046C35D /* QuranResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
