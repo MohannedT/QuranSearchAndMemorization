@@ -115,6 +115,13 @@ class QuranReadingViewController: UIViewController, SFSpeechRecognizerDelegate {
             let correctUserWords = self.longestCommonSubsequence(self.userSayingArray, sec: self.selectedVersesWithoutTashkel.components(separatedBy: " "))
             microphoneButton.isHidden = true
             
+            let quranReadingVC = self.storyboard?.instantiateViewController(withIdentifier: "QuranResult") as? QuranResultViewController
+            quranReadingVC?.Verses = self.selectedVersesWithoutTashkel.components(separatedBy: " ")
+            quranReadingVC?.RecitationVerses = correctUserWords
+            quranReadingVC?.suraName = self.suraName
+            quranReadingVC?.ChapterID = self.ChapterID
+            self.navigationController?.pushViewController(quranReadingVC!, animated: true)
+            
         }
     }
     

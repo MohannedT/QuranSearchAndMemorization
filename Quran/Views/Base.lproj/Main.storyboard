@@ -616,6 +616,79 @@
             </objects>
             <point key="canvasLocation" x="1645.5999999999999" y="456.52173913043481"/>
         </scene>
+        <!--Quran Result View Controller-->
+        <scene sceneID="9eh-A9-gSm">
+            <objects>
+                <viewController storyboardIdentifier="QuranResult" id="WXO-lh-bbs" customClass="QuranResultViewController" customModule="Quran" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MzB-yZ-hb1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newQuranBackground" translatesAutoresizingMaskIntoConstraints="NO" id="vyq-0T-f3D">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nL-zM-QS0">
+                                <rect key="frame" x="32" y="64" width="316" height="583"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7rx-de-1rd">
+                                        <rect key="frame" x="8" y="8" width="300" height="567"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7rx-de-1rd" secondAttribute="trailing" constant="8" id="0n0-Vy-6e2"/>
+                                    <constraint firstAttribute="bottom" secondItem="7rx-de-1rd" secondAttribute="bottom" constant="8" id="7O8-ua-wNu"/>
+                                    <constraint firstItem="7rx-de-1rd" firstAttribute="centerY" secondItem="0nL-zM-QS0" secondAttribute="centerY" id="TcB-UV-PlR"/>
+                                    <constraint firstItem="7rx-de-1rd" firstAttribute="centerX" secondItem="0nL-zM-QS0" secondAttribute="centerX" id="fOQ-Ir-6JQ"/>
+                                    <constraint firstItem="7rx-de-1rd" firstAttribute="top" secondItem="0nL-zM-QS0" secondAttribute="top" constant="8" id="l50-QE-kVI"/>
+                                    <constraint firstItem="7rx-de-1rd" firstAttribute="leading" secondItem="0nL-zM-QS0" secondAttribute="leading" constant="8" id="wUj-En-Eb2"/>
+                                </constraints>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السورة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvc-N2-oga">
+                                <rect key="frame" x="248" y="24" width="86" height="28"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الجزء" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="na8-Wh-odb">
+                                <rect key="frame" x="43" y="27" width="95" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87920719390000002" green="0.78722405429999998" blue="0.56890499589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0nL-zM-QS0" firstAttribute="leading" secondItem="5dc-k6-BdP" secondAttribute="leading" constant="32" id="1wN-FC-g0g"/>
+                            <constraint firstItem="5dc-k6-BdP" firstAttribute="trailing" secondItem="0nL-zM-QS0" secondAttribute="trailing" constant="27" id="6hn-Mf-WMH"/>
+                            <constraint firstAttribute="trailing" secondItem="vyq-0T-f3D" secondAttribute="trailing" id="9G6-NY-7Bb"/>
+                            <constraint firstItem="0nL-zM-QS0" firstAttribute="top" secondItem="rvc-N2-oga" secondAttribute="bottom" constant="12.5" id="DuF-2t-fdX"/>
+                            <constraint firstItem="5dc-k6-BdP" firstAttribute="bottom" secondItem="0nL-zM-QS0" secondAttribute="bottom" constant="20" id="Kde-pz-1DB"/>
+                            <constraint firstItem="vyq-0T-f3D" firstAttribute="top" secondItem="5dc-k6-BdP" secondAttribute="top" id="MvF-yD-GtB"/>
+                            <constraint firstItem="rvc-N2-oga" firstAttribute="leading" secondItem="5dc-k6-BdP" secondAttribute="leading" constant="248" id="N3h-wG-n52"/>
+                            <constraint firstItem="5dc-k6-BdP" firstAttribute="trailing" secondItem="rvc-N2-oga" secondAttribute="trailing" constant="41" id="N49-kN-9Ch"/>
+                            <constraint firstItem="na8-Wh-odb" firstAttribute="leading" secondItem="5dc-k6-BdP" secondAttribute="leading" constant="43" id="NMn-SN-e0H"/>
+                            <constraint firstItem="0nL-zM-QS0" firstAttribute="top" secondItem="5dc-k6-BdP" secondAttribute="top" constant="44" id="SVW-DU-Rld"/>
+                            <constraint firstItem="rvc-N2-oga" firstAttribute="top" secondItem="5dc-k6-BdP" secondAttribute="top" constant="4" id="dBp-EQ-JWf"/>
+                            <constraint firstItem="5dc-k6-BdP" firstAttribute="bottom" secondItem="vyq-0T-f3D" secondAttribute="bottom" id="iAT-aS-vjU"/>
+                            <constraint firstItem="vyq-0T-f3D" firstAttribute="leading" secondItem="MzB-yZ-hb1" secondAttribute="leading" id="lzF-UB-llg"/>
+                            <constraint firstItem="na8-Wh-odb" firstAttribute="top" secondItem="5dc-k6-BdP" secondAttribute="top" constant="7" id="rn1-Ed-UHp"/>
+                            <constraint firstItem="rvc-N2-oga" firstAttribute="leading" secondItem="na8-Wh-odb" secondAttribute="trailing" constant="110" id="vTv-Ox-pQQ"/>
+                            <constraint firstItem="0nL-zM-QS0" firstAttribute="top" secondItem="na8-Wh-odb" secondAttribute="bottom" constant="9" id="xST-x1-BbN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5dc-k6-BdP"/>
+                    </view>
+                    <connections>
+                        <outlet property="SuraVersesTextView" destination="7rx-de-1rd" id="0pA-zw-ofC"/>
+                        <outlet property="chapterNumberLabel" destination="na8-Wh-odb" id="vZ0-H6-0Md"/>
+                        <outlet property="suraNameLabel" destination="rvc-N2-oga" id="XA9-5n-SEF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FuU-rg-wnx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1645.5" y="456.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Bar" width="318" height="50"/>
