@@ -13,6 +13,12 @@ class RetrievedVersesViewController: UIViewController {
     @IBOutlet weak var versesTableView: UITableView!
     var retrievedVerses = [[String]]()
     var userQuery = ""
+    var ayatText = [String]()
+    var chapterNumbers = [String]()
+    var partNumbers = [String]()
+    var soraNames = [String]()
+    var versesNumbers = [String]()
+    var subTopics = [String]()
     
 
     override func viewDidLoad() {
@@ -21,15 +27,43 @@ class RetrievedVersesViewController: UIViewController {
         versesTableView.dataSource = self
         versesTableView.delegate = self
         
-        let searchByQuranVC = storyboard?.instantiateViewController(withIdentifier: "SearchQuranByVoice") as! SearchQuranByVoiceViewController
-        
-        print("User query \(userQuery)")
-        retrievedVerses = searchByQuranVC.SearchForWord(Word: userQuery)
-        print("\n\n\n this is table view \n")
-        print(retrievedVerses)
+        getAyatFromTopic()
+        print(subTopics)
     }
 
+    func getAyatFromTopic(){
+        Client.shared().getDataFromTopicAyatAPI(topic: userQuery, completionHandler: {(data, error) in
+            if error != nil {
+                self.showAlertController(withTitle: "Error fetching Ayat", withMessage: "We didn't find any Information, Be sure to be connected with Internet or try again later.")
+            }
+            
+            else if let fetchedData = data {
+                for subTopic in fetchedData.SubTopics {
+                    print(subTopic)
+                }
+                for aya in fetchedData.Ayat {
+                    print(aya.AyaText)
+                }
+            }
+        })
+    }
+    
+    
+    func getayatFromMostSimilarTopic(){
+        Client.shared().getDataFromMostSimilarTopicsAPI(query: userQuery, completionHandler: {(data, error) in
+            if error != nil {
+                self.showAlertController(withTitle: "Error fetching Ayat", withMessage: "We didn't find any Information, Be sure to be connected with Internet or try again later.")
+            }
+            
+            else if let fetchedData = data {
+                
+            }
+        })
+    }
+    
 }
+
+
 
 
 extension RetrievedVersesViewController: UITableViewDelegate, UITableViewDataSource {

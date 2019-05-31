@@ -42,6 +42,7 @@
         <!--Item-->
         <scene sceneID="2Kr-WK-sOm">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4hT-SH-Y2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SearchQuranByText" id="SfF-YL-3nV" customClass="SearchQuranByTextViewController" customModule="Quran" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F9O-m7-D44">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -79,7 +80,6 @@
                         <segue destination="exX-W7-kTQ" kind="show" identifier="ShowVersesSegue" id="czV-ap-9Uy"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4hT-SH-Y2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="888.79999999999995" y="1269.7151424287856"/>
         </scene>
@@ -372,6 +372,7 @@
         <!--Retrieved Verses View Controller-->
         <scene sceneID="KHr-yA-Y3s">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JMt-LT-aKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="exX-W7-kTQ" customClass="RetrievedVersesViewController" customModule="Quran" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lBB-pT-gWi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -451,7 +452,6 @@
                         <outlet property="versesTableView" destination="MeS-5f-NiP" id="LbT-Xd-3rM"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JMt-LT-aKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1645.5999999999999" y="1269.7151424287856"/>
         </scene>

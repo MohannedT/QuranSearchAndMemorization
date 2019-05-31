@@ -18,15 +18,17 @@
 		861D49722216116300CF3449 /* SearchQuranByTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D49712216116300CF3449 /* SearchQuranByTextViewController.swift */; };
 		861D49742216159E00CF3449 /* RetrievedVersesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D49732216159E00CF3449 /* RetrievedVersesViewController.swift */; };
 		861D497622163A6A00CF3449 /* AyaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D497522163A6A00CF3449 /* AyaTableViewCell.swift */; };
-		86223B60224E67E900706DAB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86223B5F224E67E900706DAB /* Constants.swift */; };
 		86223B63224E698200706DAB /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86223B62224E698200706DAB /* Client.swift */; };
 		86223B71224F0A4000706DAB /* PrayTimesLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86223B70224F0A4000706DAB /* PrayTimesLocation.swift */; };
 		86223B75224F96B500706DAB /* PrayerTimesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86223B74224F96B500706DAB /* PrayerTimesTableViewController.swift */; };
 		8656014222024DAA00A721F5 /* suraNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 8656014122024DAA00A721F5 /* suraNames.json */; };
 		867B428E22519A86009DF490 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867B428D22519A86009DF490 /* ViewController+Extension.swift */; };
 		86A9AA012256B3A1007DFEDD /* PrayTimesCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A9AA002256B3A1007DFEDD /* PrayTimesCity.swift */; };
+		86B138002287C13F00640B96 /* TopicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B137FF2287C13F00640B96 /* TopicResponse.swift */; };
 		86DF2BA622424B0700D6C8E6 /* UthmanTN1Ver10.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86DF2BA322424AA500D6C8E6 /* UthmanTN1Ver10.otf */; };
 		86DF2BAA2242507E00D6C8E6 /* QuranReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF2BA92242507E00D6C8E6 /* QuranReadingViewController.swift */; };
+		86E4EF0A22A0E51900550EAD /* SimilarTopicsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E4EF0922A0E51900550EAD /* SimilarTopicsResponse.swift */; };
+		86F4D59F229F8A5D00E6C792 /* Client+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F4D59E229F8A5D00E6C792 /* Client+Extension.swift */; };
 		C62216F8226027CA00616D8A /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62216F6226027CA00616D8A /* SearchViewCell.swift */; };
 		C62216F9226027CA00616D8A /* SearchViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62216F7226027CA00616D8A /* SearchViewCell.xib */; };
 		C6298DEE21FB45AA00F49575 /* SurasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6298DED21FB45AA00F49575 /* SurasTableViewController.swift */; };
@@ -51,15 +53,17 @@
 		861D49712216116300CF3449 /* SearchQuranByTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuranByTextViewController.swift; sourceTree = "<group>"; };
 		861D49732216159E00CF3449 /* RetrievedVersesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrievedVersesViewController.swift; sourceTree = "<group>"; };
 		861D497522163A6A00CF3449 /* AyaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyaTableViewCell.swift; sourceTree = "<group>"; };
-		86223B5F224E67E900706DAB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		86223B62224E698200706DAB /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		86223B70224F0A4000706DAB /* PrayTimesLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayTimesLocation.swift; sourceTree = "<group>"; };
 		86223B74224F96B500706DAB /* PrayerTimesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimesTableViewController.swift; sourceTree = "<group>"; };
 		8656014122024DAA00A721F5 /* suraNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = suraNames.json; sourceTree = "<group>"; };
 		867B428D22519A86009DF490 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		86A9AA002256B3A1007DFEDD /* PrayTimesCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayTimesCity.swift; sourceTree = "<group>"; };
+		86B137FF2287C13F00640B96 /* TopicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicResponse.swift; sourceTree = "<group>"; };
 		86DF2BA322424AA500D6C8E6 /* UthmanTN1Ver10.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UthmanTN1Ver10.otf; sourceTree = "<group>"; };
 		86DF2BA92242507E00D6C8E6 /* QuranReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranReadingViewController.swift; sourceTree = "<group>"; };
+		86E4EF0922A0E51900550EAD /* SimilarTopicsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarTopicsResponse.swift; sourceTree = "<group>"; };
+		86F4D59E229F8A5D00E6C792 /* Client+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+Extension.swift"; sourceTree = "<group>"; };
 		8C680D5D3C87C021240E3B31 /* Pods-Quran.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quran.release.xcconfig"; path = "Target Support Files/Pods-Quran/Pods-Quran.release.xcconfig"; sourceTree = "<group>"; };
 		C62216F6226027CA00616D8A /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		C62216F7226027CA00616D8A /* SearchViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewCell.xib; sourceTree = "<group>"; };
@@ -122,7 +126,6 @@
 			children = (
 				86223B61224E697300706DAB /* Networking */,
 				860F68D8217AA40E00627AB4 /* AppDelegate.swift */,
-				86223B5F224E67E900706DAB /* Constants.swift */,
 				861D49792216531700CF3449 /* Views */,
 				861D4978221652C100CF3449 /* Controllers */,
 				867B428C22519A60009DF490 /* Extensions */,
@@ -165,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				86223B62224E698200706DAB /* Client.swift */,
+				86F4D59E229F8A5D00E6C792 /* Client+Extension.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -174,6 +178,8 @@
 			children = (
 				86223B70224F0A4000706DAB /* PrayTimesLocation.swift */,
 				86A9AA002256B3A1007DFEDD /* PrayTimesCity.swift */,
+				86B137FF2287C13F00640B96 /* TopicResponse.swift */,
+				86E4EF0922A0E51900550EAD /* SimilarTopicsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,17 +331,19 @@
 				C62EE66A2254397C00AE9204 /* TableViewCell.swift in Sources */,
 				861D49742216159E00CF3449 /* RetrievedVersesViewController.swift in Sources */,
 				861D49722216116300CF3449 /* SearchQuranByTextViewController.swift in Sources */,
+				86B138002287C13F00640B96 /* TopicResponse.swift in Sources */,
 				C6298DEE21FB45AA00F49575 /* SurasTableViewController.swift in Sources */,
+				86F4D59F229F8A5D00E6C792 /* Client+Extension.swift in Sources */,
 				860F68D9217AA40E00627AB4 /* AppDelegate.swift in Sources */,
 				861D497622163A6A00CF3449 /* AyaTableViewCell.swift in Sources */,
 				C62216F8226027CA00616D8A /* SearchViewCell.swift in Sources */,
 				867B428E22519A86009DF490 /* ViewController+Extension.swift in Sources */,
 				86A9AA012256B3A1007DFEDD /* PrayTimesCity.swift in Sources */,
 				86DF2BAA2242507E00D6C8E6 /* QuranReadingViewController.swift in Sources */,
+				86E4EF0A22A0E51900550EAD /* SimilarTopicsResponse.swift in Sources */,
 				860F68ED217AB7EF00627AB4 /* SearchQuranByVoiceViewController.swift in Sources */,
 				86223B71224F0A4000706DAB /* PrayTimesLocation.swift in Sources */,
 				86223B63224E698200706DAB /* Client.swift in Sources */,
-				86223B60224E67E900706DAB /* Constants.swift in Sources */,
 				86223B75224F96B500706DAB /* PrayerTimesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
