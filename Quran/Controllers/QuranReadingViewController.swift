@@ -51,7 +51,6 @@ class QuranReadingViewController: UIViewController, SFSpeechRecognizerDelegate {
         suraNameLabel.text = suraName
         chapterNumberLabel.text = " الجزء (\(ChapterID!))"
         
-        
         microphoneButton.isEnabled = false
         speechRecognizer?.delegate = self
         
@@ -77,13 +76,10 @@ class QuranReadingViewController: UIViewController, SFSpeechRecognizerDelegate {
             }
         }
         
-        
     }
     
     
     @IBAction func onClickStartRecitationButton(_ sender: UIButton) {
-        //if (self.flagButton == true ){
-        
         performUIUpdatesOnMain {
             self.SuraVersesTextView.text = nil
         }
@@ -98,7 +94,6 @@ class QuranReadingViewController: UIViewController, SFSpeechRecognizerDelegate {
             microphoneButton.setImage(UIImage(named: "Record.png"), for: .normal)
             SuraVersesTextView.isEditable = true
             self.flagButton = false
-            // microphoneButton.isHidden = true
             microphoneButton.setTitle("confirm", for: .normal)
             
         } else if (audioEngine.isRunning == false  && self.flagButton == true) {

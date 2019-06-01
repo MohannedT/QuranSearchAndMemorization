@@ -39,24 +39,38 @@ class SurasTableViewController: UITableViewController,UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Register the table cell object
-  
         
         let tableCell = UINib(nibName: "TableViewCell", bundle: nil)
-        
         self.tableView.register(tableCell, forCellReuseIdentifier: "cell")
-        
         let searchingCell = UINib(nibName: "SearchViewCell", bundle: nil)
-        
         self.tableView.register(searchingCell, forCellReuseIdentifier: "SearchCell")
-        
-  
         
         getSurasFromJSON(fileName: "suraNames")
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
         
     }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == ""
+        {
+            isSearching = false
+            view.endEditing(true)
+            tableView.reloadData()
+        }
+        else
+        {
+            isSearching = true
+            // caling the search func
+            searchingResult = SearchForWord(Word: searchBar.text!)
+            tableView.reloadData()
+        }
+    }
+}
+
+
+extension SurasTableViewController {
     
     // MARK: - Table view data source
     
@@ -113,27 +127,11 @@ class SurasTableViewController: UITableViewController,UISearchBarDelegate {
             {
                 versesArray.append(i)
             }
-        
+            
             inistansiatePickerViewController()
         }
     }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text == nil || searchBar.text == ""
-        {
-            isSearching = false
-            view.endEditing(true)
-            tableView.reloadData()
-        }
-        else
-        {
-            isSearching = true
-            // caling the search func
-              let searchByQuranVC = storyboard?.instantiateViewController(withIdentifier: "SearchQuranByVoice") as! SearchQuranByVoiceViewController
-            searchingResult = searchByQuranVC.SearchForWord(Word: searchBar.text!)
-            tableView.reloadData()
-        }
-    }
+
 }
 
 

@@ -68,7 +68,6 @@ class RetrievedVersesViewController: UIViewController {
 
 
 
-
 extension RetrievedVersesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
