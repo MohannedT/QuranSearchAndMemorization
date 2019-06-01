@@ -27,8 +27,7 @@ class RetrievedVersesViewController: UIViewController {
         versesTableView.dataSource = self
         versesTableView.delegate = self
         
-        getAyatFromTopic()
-        print(subTopics)
+        getAyatFromMostSimilarTopic()
     }
 
     func getAyatFromTopic(){
@@ -49,14 +48,18 @@ class RetrievedVersesViewController: UIViewController {
     }
     
     
-    func getayatFromMostSimilarTopic(){
+    func getAyatFromMostSimilarTopic(){
         Client.shared().getDataFromMostSimilarTopicsAPI(query: userQuery, completionHandler: {(data, error) in
             if error != nil {
                 self.showAlertController(withTitle: "Error fetching Ayat", withMessage: "We didn't find any Information, Be sure to be connected with Internet or try again later.")
             }
             
             else if let fetchedData = data {
-                
+                for topic in fetchedData {
+                    if topic.Ranking == "1" {
+                        print(topic.SubTopics)
+                    }
+                }
             }
         })
     }

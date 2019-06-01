@@ -146,7 +146,7 @@ class Client: NSObject {
     }
     
     
-    func getDataFromMostSimilarTopicsAPI(query: String, completionHandler: @escaping(_ result: SimilarTopicsResponse?, _ error: NSError?) -> Void) {
+    func getDataFromMostSimilarTopicsAPI(query: String, completionHandler: @escaping(_ result: [SimilarTopicsResponse]?, _ error: NSError?) -> Void) {
         let url = "http://127.0.0.1:5000/api/v1/resources/topics?query=" + query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         URLSession.shared.dataTask(with: URL(string: url)!) { (data, response, error) in
             func sendError(_ error: String) {
@@ -172,7 +172,7 @@ class Client: NSObject {
             }
             
             do {
-                let result = try JSONDecoder().decode(SimilarTopicsResponse.self, from: data)
+                let result = try JSONDecoder().decode([SimilarTopicsResponse].self, from: data)
                 completionHandler(result, nil)
             } catch let error as NSError {
                 sendError("An Error happend while parsing data: \(error)")
