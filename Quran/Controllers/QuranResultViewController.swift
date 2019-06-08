@@ -25,7 +25,10 @@ class QuranResultViewController: UIViewController {
         
         suraNameLabel.text = suraName
         chapterNumberLabel.text = " الجزء (\(ChapterID!))"
-        
+        if(self.RecitationVerses.count == 0)
+        {
+            self.RecitationVerses = ["IsEmpty"]
+        }
         let result = Result(Quran: self.Verses,Recitation: self.RecitationVerses)
         SuraVersesTextView.text = "\(result)"
         let encoding = result.data(using: String.Encoding.utf16)!
