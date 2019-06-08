@@ -312,7 +312,7 @@ extension SearchQuranByTopicViewController: UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if(self.selectedIndex == 0) {
-            return 150
+            return UITableViewAutomaticDimension
         }
         else {
             return 50
