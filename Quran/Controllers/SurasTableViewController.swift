@@ -53,7 +53,7 @@ class SurasTableViewController: UITableViewController,UISearchBarDelegate {
     
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text == nil || searchBar.text == ""
+        if( searchBar.text == nil || searchBar.text == "" )
         {
             isSearching = false
             view.endEditing(true)
@@ -99,7 +99,7 @@ extension SurasTableViewController {
             searchingCell.searchSuraName.text =  searchingResult[indexPath.row][4]
             searchingCell.chapter.text = "الجزء رقم"
             searchingCell.CN.text = searchingResult[indexPath.row][0]
-            searchingCell.searchVerse.text = searchingResult[indexPath.row][3]
+            searchingCell.searchVerse.text = searchingResult[indexPath.row][6]
             return searchingCell
             
         }

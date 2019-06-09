@@ -149,7 +149,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.88845366240000001" green="0.80328130720000002" blue="0.59200590850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZQf-1d-1PF" firstAttribute="top" secondItem="ffr-Ow-bcz" secondAttribute="top" id="2UY-AN-25I"/>
                             <constraint firstItem="QZl-In-enS" firstAttribute="bottom" secondItem="ffr-Ow-bcz" secondAttribute="bottom" id="2ws-0Q-2rX"/>

@@ -101,6 +101,7 @@ class SearchQuranByTopicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     
@@ -238,16 +239,23 @@ extension SearchQuranByTopicViewController: UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if(self.selectedIndex == 0){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as? RetrivedTextTableViewCell
-
-            cell?.textView.font = cell?.textView.font?.withSize(25)
             if(isTopicRequest == false) {
-                cell?.configureCell(text: "\(versesArray[indexPath.row].AyaText) | \(versesArray[indexPath.row].VerseNUM) | سورة \(versesArray[indexPath.row].SoraName) | الجزء رقم \(versesArray[indexPath.row].ChapterNUM)")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchViewCell
+            cell.searchSuraName.text =  versesArray[indexPath.row].SoraName
+            cell.chapter.text = "الجزء رقم"
+            cell.CN.text = versesArray[indexPath.row].ChapterNUM
+            cell.searchVerse.text = versesArray[indexPath.row].AyaText
+                return cell
             }
             else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as? RetrivedTextTableViewCell
+                
+                cell?.textView.font = cell?.textView.font?.withSize(25)
+                
                 cell?.configureCell(text: topicVersesArray[indexPath.row].AyaText)
+                return cell!
             }
-            return cell!
+            
         }
         else if(self.selectedIndex == 1){
             let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: nil)
