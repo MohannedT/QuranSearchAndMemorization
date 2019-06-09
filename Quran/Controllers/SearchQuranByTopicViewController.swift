@@ -26,6 +26,7 @@ class SearchQuranByTopicViewController: UIViewController {
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     let noDataLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
     var isTopicRequest = false
+    var selectedTopic = ""
 
 
     
@@ -164,6 +165,7 @@ class SearchQuranByTopicViewController: UIViewController {
                 
                 for topic in fetchedData {
                     if topic.Ranking == "1" {
+                        self.selectedTopic = topic.Topic
                         for subTopic in topic.SubTopics {
                             self.subTopicsArray.append(subTopic)
                         }
@@ -195,7 +197,6 @@ class SearchQuranByTopicViewController: UIViewController {
                 
             else if let fetchedData = data {
                 self.subTopicsArray.removeAll()
-                
                 for subTopic in fetchedData.SubTopics {
                     self.subTopicsArray.append(subTopic)
                 }
@@ -235,8 +236,10 @@ extension SearchQuranByTopicViewController: UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as? RetrivedTextTableViewCell
+        
         if(self.selectedIndex == 0){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as? RetrivedTextTableViewCell
+
             cell?.textView.font = cell?.textView.font?.withSize(25)
             if(isTopicRequest == false) {
                 cell?.configureCell(text: "\(versesArray[indexPath.row].AyaText) | \(versesArray[indexPath.row].VerseNUM) | سورة \(versesArray[indexPath.row].SoraName) | الجزء رقم \(versesArray[indexPath.row].ChapterNUM)")
@@ -244,17 +247,22 @@ extension SearchQuranByTopicViewController: UITableViewDataSource, UITableViewDe
             else {
                 cell?.configureCell(text: topicVersesArray[indexPath.row].AyaText)
             }
+            return cell!
         }
         else if(self.selectedIndex == 1){
-            cell?.textView.font = cell?.textView.font?.withSize(20)
-            cell?.configureCell(text: subTopicsArray[indexPath.row])
+            let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: nil)
+            cell.textLabel?.text = subTopicsArray[indexPath.row]
+            return cell
+//            cell?.textView.font = cell?.textView.font?.withSize(20)
+//            cell?.configureCell(text: subTopicsArray[indexPath.row])
         }
         else{
-            cell?.textView.font = cell?.textView.font?.withSize(20)
-            cell?.configureCell(text: relatedTopicsArray[indexPath.row])
+            let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: nil)
+            cell.textLabel?.text = relatedTopicsArray[indexPath.row]
+            return cell
+//            cell?.textView.font = cell?.textView.font?.withSize(20)
+//            cell?.configureCell(text: relatedTopicsArray[indexPath.row])
         }
-        
-        return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -264,6 +272,7 @@ extension SearchQuranByTopicViewController: UITableViewDataSource, UITableViewDe
                 self.addActivityIndicator()
             }
             if(self.selectedIndex == 1) {
+                self.selectedTopic = subTopicsArray[indexPath.row]
                 print("Selected subtopic: \(subTopicsArray[indexPath.row])")
                 userQuerySearchBar.text = subTopicsArray[indexPath.row]
                 getAyatFromTopic(topic: subTopicsArray[indexPath.row], completionHandler: {(success) -> Void in
@@ -283,6 +292,7 @@ extension SearchQuranByTopicViewController: UITableViewDataSource, UITableViewDe
                 })
             }
             else {
+                self.selectedTopic = relatedTopicsArray[indexPath.row]
                 print("Selected related: \(relatedTopicsArray[indexPath.row])")
                 userQuerySearchBar.text = relatedTopicsArray[indexPath.row]
                 getAyatFromTopic(topic: relatedTopicsArray[indexPath.row], completionHandler: {(success) -> Void in
@@ -316,6 +326,15 @@ extension SearchQuranByTopicViewController: UITableViewDataSource, UITableViewDe
         }
         else {
             return 50
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if(self.selectedIndex == 0) {
+            return self.selectedTopic
+        }
+        else {
+            return ""
         }
     }
     

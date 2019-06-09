@@ -227,8 +227,8 @@
 		86E4EF0B22A25FDE00550EAD /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				C62216F7226027CA00616D8A /* SearchViewCell.xib */,
 				C62EE6692254397C00AE9204 /* TableViewCell.xib */,
+				C62216F7226027CA00616D8A /* SearchViewCell.xib */,
 				C62216F6226027CA00616D8A /* SearchViewCell.swift */,
 				C62EE6682254397C00AE9204 /* TableViewCell.swift */,
 				861D497522163A6A00CF3449 /* AyaTableViewCell.swift */,
