@@ -41,7 +41,7 @@ class QuranResultViewController: UIViewController {
     }
     
     func Result(Quran: [String],Recitation:[String])-> String{
-        var review = "<font size=30>"
+        var review = "<div style=\"text-align:right\"><font size=30>"
         var count = -1
         var count2 = 0
         for test in Recitation
@@ -65,7 +65,7 @@ class QuranResultViewController: UIViewController {
                 }
             }
         }
-        review += "</font>"
+        review += "</font></div>"
         return review
     }
     

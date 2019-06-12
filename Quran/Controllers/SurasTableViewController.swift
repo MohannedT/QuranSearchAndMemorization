@@ -42,6 +42,7 @@ class SurasTableViewController: UITableViewController,UISearchBarDelegate {
         
         let tableCell = UINib(nibName: "TableViewCell", bundle: nil)
         self.tableView.register(tableCell, forCellReuseIdentifier: "cell")
+    
         let searchingCell = UINib(nibName: "SearchViewCell", bundle: nil)
         self.tableView.register(searchingCell, forCellReuseIdentifier: "SearchCell")
         

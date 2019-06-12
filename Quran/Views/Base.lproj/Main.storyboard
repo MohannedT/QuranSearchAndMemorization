@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="-358" y="797"/>
         </scene>
-        <!--Item-->
+        <!--topics-->
         <scene sceneID="2Kr-WK-sOm">
             <objects>
                 <viewController storyboardIdentifier="SearchQuranByText" id="SfF-YL-3nV" customClass="SearchQuranByTopicViewController" customModule="Quran" customModuleProvider="target" sceneMemberID="viewController">
@@ -114,33 +114,19 @@
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QZl-In-enS">
                                 <rect key="frame" x="0.0" y="178" width="375" height="440"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.89187353849999995" green="0.80355894569999997" blue="0.58310031890000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.89187353849999995" green="0.80355894569999997" blue="0.58310031890000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.89187353849999995" green="0.80355894569999997" blue="0.58310031890000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableCell" rowHeight="94" id="vvV-da-HGY" customClass="RetrivedTextTableViewCell" customModule="Quran" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" rowHeight="94" id="vvV-da-HGY" customClass="SearchViewCell" customModule="Quran" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vvV-da-HGY" id="f5N-Pa-tbw">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="93.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="text" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="PmN-qF-4Dz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="PmN-qF-4Dz" firstAttribute="leading" secondItem="f5N-Pa-tbw" secondAttribute="leading" id="8IQ-CU-qds"/>
-                                                <constraint firstItem="PmN-qF-4Dz" firstAttribute="top" secondItem="f5N-Pa-tbw" secondAttribute="top" id="8Xd-3f-BTe"/>
-                                                <constraint firstAttribute="bottom" secondItem="PmN-qF-4Dz" secondAttribute="bottom" id="g7B-b1-Rym"/>
-                                                <constraint firstAttribute="trailing" secondItem="PmN-qF-4Dz" secondAttribute="trailing" id="s3w-y8-hsW"/>
-                                            </constraints>
+                                            <color key="backgroundColor" red="0.89187353849999995" green="0.80355894569999997" blue="0.58310031890000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <outlet property="textView" destination="PmN-qF-4Dz" id="2lO-QA-DSK"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -167,7 +153,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ffr-Ow-bcz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="I1C-pZ-kjF"/>
+                    <tabBarItem key="tabBarItem" title="topics" id="I1C-pZ-kjF"/>
                     <connections>
                         <outlet property="menuCollectionView" destination="QWb-W0-teg" id="aX1-UM-BKb"/>
                         <outlet property="searchButton" destination="ZQf-1d-1PF" id="4fL-fr-jok"/>
@@ -491,12 +477,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.88845366239547729" green="0.80328130722045898" blue="0.59200590848922729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" semanticContentAttribute="playback" barStyle="black" text="" placeholder="search for verse" backgroundImage="Bar" id="YS9-QX-4xm">
+                        <searchBar key="tableHeaderView" contentMode="redraw" semanticContentAttribute="playback" barStyle="blackTranslucent" searchBarStyle="prominent" text="" placeholder="search for verse" backgroundImage="Bar" id="YS9-QX-4xm">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                             <rect key="contentStretch" x="0.0" y="0.0" width="0.59999999999999998" height="0.45000000000000001"/>
                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                            <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <connections>
@@ -504,8 +491,9 @@
                             <outlet property="delegate" destination="f9b-rz-DQL" id="6cu-fm-cZo"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Recitation" id="YSU-16-zrg"/>
+                    <tabBarItem key="tabBarItem" title="Recitation" id="5HE-dt-8tW"/>
                     <navigationItem key="navigationItem" id="Dbf-OL-Wnh"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="YS9-QX-4xm" id="wc9-vn-EoW"/>
                         <outlet property="searchDisplayController" destination="Kss-S0-fAL" id="eLR-Bn-rU6"/>

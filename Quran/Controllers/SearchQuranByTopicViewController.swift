@@ -101,7 +101,8 @@ class SearchQuranByTopicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let searchingCell = UINib(nibName: "SearchViewCell", bundle: nil)
+        self.versesTableView.register(searchingCell, forCellReuseIdentifier: "SearchCell")
     }
     
     
@@ -153,6 +154,7 @@ class SearchQuranByTopicViewController: UIViewController {
     
     
     func getAyatFromMostSimilarTopic(query: String, completionHandler: @escaping (_ success: Bool) -> Void) {
+        self.isTopicRequest = false
         Client.shared().getDataFromMostSimilarTopicsAPI(query: query, completionHandler: {(data, error) in
             if error != nil {
                 self.showAlertController(withTitle: "Error fetching Ayat", withMessage: "We didn't find any Information, Be sure to be connected with Internet or try again later.")
@@ -163,6 +165,7 @@ class SearchQuranByTopicViewController: UIViewController {
                 self.versesArray.removeAll()
                 self.subTopicsArray.removeAll()
                 self.relatedTopicsArray.removeAll()
+                print("topicVersesArray count: \(self.topicVersesArray.count) , versesArray count: \(self.versesArray.count)")
                 
                 for topic in fetchedData {
                     if topic.Ranking == "1" {
@@ -197,7 +200,9 @@ class SearchQuranByTopicViewController: UIViewController {
             }
                 
             else if let fetchedData = data {
+                self.topicVersesArray.removeAll()
                 self.subTopicsArray.removeAll()
+                print("topicVersesArray count: \(self.topicVersesArray.count) , versesArray count: \(self.versesArray.count)")
                 for subTopic in fetchedData.SubTopics {
                     self.subTopicsArray.append(subTopic)
                 }
@@ -244,17 +249,18 @@ extension SearchQuranByTopicViewController: UITableViewDataSource, UITableViewDe
             cell.searchSuraName.text =  versesArray[indexPath.row].SoraName
             cell.chapter.text = "الجزء رقم"
             cell.CN.text = versesArray[indexPath.row].ChapterNUM
-            cell.searchVerse.text = versesArray[indexPath.row].AyaText
+                cell.searchVerse.text = 	"\(versesArray[indexPath.row].AyaText) {\(versesArray[indexPath.row].VerseNUM)}"
                 return cell
             }
             else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as? RetrivedTextTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchViewCell
+                cell.searchSuraName.text =  topicVersesArray[indexPath.row].SoraName
+                cell.chapter.text = "الجزء رقم"
+                cell.CN.text = topicVersesArray[indexPath.row].ChapterNUM
+                cell.searchVerse.text = "\(topicVersesArray[indexPath.row].AyaText) {\(topicVersesArray[indexPath.row].VerseNUM)}"
                 
-                cell?.textView.font = cell?.textView.font?.withSize(25)
-                
-                cell?.configureCell(text: topicVersesArray[indexPath.row].AyaText)
-                return cell!
-            }
+                return cell
+                }
             
         }
         else if(self.selectedIndex == 1){
@@ -326,6 +332,7 @@ extension SearchQuranByTopicViewController: UITableViewDataSource, UITableViewDe
         selectedIndex = 0
         selectedIndexPath = IndexPath(item: selectedIndex, section: 0)
         menuCollectionView.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .centeredVertically)
+    
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
