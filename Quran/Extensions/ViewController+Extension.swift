@@ -118,7 +118,7 @@ extension UIViewController {
             {
                 if(Int(result[index][2])! == start || Int(result[index][2])! > start && Int(result[index][2])! < end || Int(result[index][2])! == end)
                 {
-                    EntireVerses = EntireVerses + result[index][6] + "【\(result[index][2])】"
+                    EntireVerses = EntireVerses + result[index][6] + "{\(result[index][2])}"
                 }
                 if(Int(result[index][2])! == end)
                 {

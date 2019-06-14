@@ -100,7 +100,7 @@ extension SurasTableViewController {
             searchingCell.searchSuraName.text =  searchingResult[indexPath.row][4]
             searchingCell.chapter.text = "الجزء رقم"
             searchingCell.CN.text = searchingResult[indexPath.row][0]
-            searchingCell.searchVerse.text = searchingResult[indexPath.row][6]
+            searchingCell.searchVerse.text = "\(searchingResult[indexPath.row][6]) {\(searchingResult[indexPath.row][2])}"
             return searchingCell
             
         }

@@ -14,11 +14,11 @@
         <array key="AvenirNext.ttc">
             <string>AvenirNext-Bold</string>
         </array>
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
         <array key="HiraginoKakuGothic.ttc">
             <string>HiraginoSans-W3</string>
+        </array>
+        <array key="pdms-saleem-quranfont.ttf">
+            <string>_PDMS_Saleem_QuranFont</string>
         </array>
     </customFonts>
     <scenes>
@@ -153,7 +153,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ffr-Ow-bcz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="topics" id="I1C-pZ-kjF"/>
+                    <tabBarItem key="tabBarItem" title="topics" image="search" id="I1C-pZ-kjF"/>
                     <connections>
                         <outlet property="menuCollectionView" destination="QWb-W0-teg" id="aX1-UM-BKb"/>
                         <outlet property="searchButton" destination="ZQf-1d-1PF" id="4fL-fr-jok"/>
@@ -491,7 +491,7 @@
                             <outlet property="delegate" destination="f9b-rz-DQL" id="6cu-fm-cZo"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Recitation" id="5HE-dt-8tW"/>
+                    <tabBarItem key="tabBarItem" title="Recitation" image="recitation" id="5HE-dt-8tW"/>
                     <navigationItem key="navigationItem" id="Dbf-OL-Wnh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -528,7 +528,7 @@
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="55q-jI-7dD">
                                         <rect key="frame" x="8" y="8" width="300" height="488"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                        <fontDescription key="fontDescription" name="_PDMS_Saleem_QuranFont" family="_PDMS_Saleem_QuranFont" pointSize="32"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textView>
                                 </subviews>
@@ -543,18 +543,18 @@
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السورة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFX-Kf-J0o">
                                 <rect key="frame" x="248" y="24" width="86" height="28"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الجزء" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foS-53-Udu">
-                                <rect key="frame" x="43" y="27" width="95" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الجـــزء" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foS-53-Udu">
+                                <rect key="frame" x="40" y="24" width="88" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHr-K6-bGM">
-                                <rect key="frame" x="173" y="609" width="35" height="53"/>
+                                <rect key="frame" x="175" y="609" width="31" height="53"/>
                                 <color key="backgroundColor" red="0.87920719385147095" green="0.78722405433654785" blue="0.56890499591827393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Record" image="record"/>
                                 <connections>
@@ -568,18 +568,18 @@
                             <constraint firstItem="co2-xI-mTJ" firstAttribute="trailing" secondItem="rFX-Kf-J0o" secondAttribute="trailing" constant="41" id="Bq3-in-6RM"/>
                             <constraint firstItem="rFX-Kf-J0o" firstAttribute="leading" secondItem="co2-xI-mTJ" secondAttribute="leading" constant="248" id="R1f-3s-RMB"/>
                             <constraint firstItem="co2-xI-mTJ" firstAttribute="bottom" secondItem="9ih-Yn-iL4" secondAttribute="bottom" constant="99" id="UD0-q2-MYv"/>
-                            <constraint firstItem="AHr-K6-bGM" firstAttribute="leading" secondItem="co2-xI-mTJ" secondAttribute="leading" constant="173" id="XU5-hM-BiW"/>
+                            <constraint firstItem="AHr-K6-bGM" firstAttribute="leading" secondItem="co2-xI-mTJ" secondAttribute="leading" constant="175" id="XU5-hM-BiW"/>
                             <constraint firstItem="AHr-K6-bGM" firstAttribute="top" secondItem="N2A-ht-Nhu" secondAttribute="bottom" constant="8" symbolic="YES" id="Xc9-kk-nnn"/>
                             <constraint firstItem="N2A-ht-Nhu" firstAttribute="leading" secondItem="Zb3-eB-pVS" secondAttribute="leading" id="aUi-Vh-LVC"/>
                             <constraint firstItem="co2-xI-mTJ" firstAttribute="trailing" secondItem="9ih-Yn-iL4" secondAttribute="trailing" constant="27" id="ctZ-bG-VsE"/>
                             <constraint firstItem="9ih-Yn-iL4" firstAttribute="top" secondItem="foS-53-Udu" secondAttribute="bottom" constant="9" id="eQu-sO-Yyu"/>
-                            <constraint firstItem="foS-53-Udu" firstAttribute="top" secondItem="co2-xI-mTJ" secondAttribute="top" constant="7" id="gjJ-zb-O2S"/>
+                            <constraint firstItem="foS-53-Udu" firstAttribute="top" secondItem="co2-xI-mTJ" secondAttribute="top" constant="4" id="gjJ-zb-O2S"/>
                             <constraint firstItem="co2-xI-mTJ" firstAttribute="bottom" secondItem="N2A-ht-Nhu" secondAttribute="bottom" constant="66" id="hPn-fV-m32"/>
-                            <constraint firstItem="rFX-Kf-J0o" firstAttribute="leading" secondItem="foS-53-Udu" secondAttribute="trailing" constant="110" id="jfm-hY-HdD"/>
+                            <constraint firstItem="rFX-Kf-J0o" firstAttribute="leading" secondItem="foS-53-Udu" secondAttribute="trailing" constant="120" id="jfm-hY-HdD"/>
                             <constraint firstItem="rFX-Kf-J0o" firstAttribute="top" secondItem="co2-xI-mTJ" secondAttribute="top" constant="4" id="oYI-a6-BVu"/>
                             <constraint firstItem="9ih-Yn-iL4" firstAttribute="top" secondItem="co2-xI-mTJ" secondAttribute="top" constant="44" id="rbj-uh-qbX"/>
                             <constraint firstItem="9ih-Yn-iL4" firstAttribute="top" secondItem="rFX-Kf-J0o" secondAttribute="bottom" constant="12.5" id="tjB-pq-UZn"/>
-                            <constraint firstItem="foS-53-Udu" firstAttribute="leading" secondItem="co2-xI-mTJ" secondAttribute="leading" constant="43" id="u8A-6A-Ibq"/>
+                            <constraint firstItem="foS-53-Udu" firstAttribute="leading" secondItem="co2-xI-mTJ" secondAttribute="leading" constant="40" id="u8A-6A-Ibq"/>
                             <constraint firstItem="AHr-K6-bGM" firstAttribute="centerX" secondItem="9ih-Yn-iL4" secondAttribute="centerX" id="vwj-fg-dxd"/>
                             <constraint firstItem="9ih-Yn-iL4" firstAttribute="leading" secondItem="co2-xI-mTJ" secondAttribute="leading" constant="32" id="x2A-Ql-dZZ"/>
                             <constraint firstAttribute="trailing" secondItem="N2A-ht-Nhu" secondAttribute="trailing" id="y4u-kj-mi7"/>
@@ -614,7 +614,7 @@
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7rx-de-1rd">
                                         <rect key="frame" x="8" y="8" width="300" height="567"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                        <fontDescription key="fontDescription" name="_PDMS_Saleem_QuranFont" family="_PDMS_Saleem_QuranFont" pointSize="32"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textView>
                                 </subviews>
@@ -629,11 +629,11 @@
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السورة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvc-N2-oga">
                                 <rect key="frame" x="248" y="24" width="86" height="28"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الجزء" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="na8-Wh-odb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الجـــزء" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="na8-Wh-odb">
                                 <rect key="frame" x="43" y="27" width="95" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -681,7 +681,9 @@
         <image name="newQuranBackground" width="79" height="118"/>
         <image name="night" width="83" height="83"/>
         <image name="prayerTimes" width="21" height="21"/>
+        <image name="recitation" width="64" height="64"/>
         <image name="record" width="33" height="33"/>
+        <image name="search" width="64" height="64"/>
         <image name="sunshine" width="83" height="83"/>
     </resources>
 </document>

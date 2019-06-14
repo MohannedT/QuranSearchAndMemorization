@@ -35,6 +35,8 @@
 		C62EE66A2254397C00AE9204 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62EE6682254397C00AE9204 /* TableViewCell.swift */; };
 		C62EE66B2254397C00AE9204 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62EE6692254397C00AE9204 /* TableViewCell.xib */; };
 		C6A2DAE722A172850046C35D /* QuranResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2DAE622A172850046C35D /* QuranResultViewController.swift */; };
+		C6F025B822B3C83B004B0402 /* diwani-bent.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6F025B722B3C83A004B0402 /* diwani-bent.ttf */; };
+		C6F025BA22B3CC1B004B0402 /* pdms-saleem-quranfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6F025B922B3CC17004B0402 /* pdms-saleem-quranfont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		C62EE6682254397C00AE9204 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C62EE6692254397C00AE9204 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		C6A2DAE622A172850046C35D /* QuranResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranResultViewController.swift; sourceTree = "<group>"; };
+		C6F025B722B3C83A004B0402 /* diwani-bent.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "diwani-bent.ttf"; sourceTree = "<group>"; };
+		C6F025B922B3CC17004B0402 /* pdms-saleem-quranfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pdms-saleem-quranfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,8 @@
 		86DF2BA222424A6900D6C8E6 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C6F025B722B3C83A004B0402 /* diwani-bent.ttf */,
+				C6F025B922B3CC17004B0402 /* pdms-saleem-quranfont.ttf */,
 				86DF2BA322424AA500D6C8E6 /* UthmanTN1Ver10.otf */,
 			);
 			path = fonts;
@@ -299,9 +305,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6F025BA22B3CC1B004B0402 /* pdms-saleem-quranfont.ttf in Resources */,
 				86DF2BA622424B0700D6C8E6 /* UthmanTN1Ver10.otf in Resources */,
 				C62216F9226027CA00616D8A /* SearchViewCell.xib in Resources */,
 				860F68E5217AA40E00627AB4 /* LaunchScreen.storyboard in Resources */,
+				C6F025B822B3C83B004B0402 /* diwani-bent.ttf in Resources */,
 				8656014222024DAA00A721F5 /* suraNames.json in Resources */,
 				C62EE66B2254397C00AE9204 /* TableViewCell.xib in Resources */,
 				861D496D22160EB800CF3449 /* BigDataSet(small).csv in Resources */,

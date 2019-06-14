@@ -58,6 +58,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>UthmanTN1Ver10.otf</string>
+		<string>pdms-saleem-quranfont.ttf</string>
+		<string>diwani-bent.ttf</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We try to get your location to update you with Today&apos;s Pray Times</string>
