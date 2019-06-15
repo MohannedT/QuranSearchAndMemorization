@@ -44,19 +44,22 @@ class QuranResultViewController: UIViewController {
         var review = "<div style=\"text-align:right\"><font size=30>"
         var count = -1
         var count2 = 0
+        var compare = ""
         for test in Recitation
         {
+            compare = test
             count2 += 1
             while(count + 1 < Quran.count)
             {
                 count += 1
-                if (test == Quran[count])
+                if (compare == Quran[count])
                 {
                     review += "<font color = green>\(Quran[count]) </font>"
                     if (count2 < Recitation.count)
                     {
                         break
                     }
+                    compare = "done"
                     
                 }
                 else

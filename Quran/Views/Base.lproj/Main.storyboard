@@ -554,9 +554,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHr-K6-bGM">
-                                <rect key="frame" x="175" y="609" width="31" height="53"/>
+                                <rect key="frame" x="120" y="609" width="141" height="53"/>
                                 <color key="backgroundColor" red="0.87920719385147095" green="0.78722405433654785" blue="0.56890499591827393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Record" image="record"/>
+                                <state key="normal" image="record"/>
                                 <connections>
                                     <action selector="onClickStartRecitationButton:" destination="cua-8R-XO6" eventType="touchUpInside" id="R9d-Pe-zQ2"/>
                                 </connections>
@@ -568,7 +568,7 @@
                             <constraint firstItem="co2-xI-mTJ" firstAttribute="trailing" secondItem="rFX-Kf-J0o" secondAttribute="trailing" constant="41" id="Bq3-in-6RM"/>
                             <constraint firstItem="rFX-Kf-J0o" firstAttribute="leading" secondItem="co2-xI-mTJ" secondAttribute="leading" constant="248" id="R1f-3s-RMB"/>
                             <constraint firstItem="co2-xI-mTJ" firstAttribute="bottom" secondItem="9ih-Yn-iL4" secondAttribute="bottom" constant="99" id="UD0-q2-MYv"/>
-                            <constraint firstItem="AHr-K6-bGM" firstAttribute="leading" secondItem="co2-xI-mTJ" secondAttribute="leading" constant="175" id="XU5-hM-BiW"/>
+                            <constraint firstItem="AHr-K6-bGM" firstAttribute="leading" secondItem="co2-xI-mTJ" secondAttribute="leading" constant="120" id="XU5-hM-BiW"/>
                             <constraint firstItem="AHr-K6-bGM" firstAttribute="top" secondItem="N2A-ht-Nhu" secondAttribute="bottom" constant="8" symbolic="YES" id="Xc9-kk-nnn"/>
                             <constraint firstItem="N2A-ht-Nhu" firstAttribute="leading" secondItem="Zb3-eB-pVS" secondAttribute="leading" id="aUi-Vh-LVC"/>
                             <constraint firstItem="co2-xI-mTJ" firstAttribute="trailing" secondItem="9ih-Yn-iL4" secondAttribute="trailing" constant="27" id="ctZ-bG-VsE"/>
@@ -681,9 +681,9 @@
         <image name="newQuranBackground" width="79" height="118"/>
         <image name="night" width="83" height="83"/>
         <image name="prayerTimes" width="21" height="21"/>
-        <image name="recitation" width="64" height="64"/>
+        <image name="recitation" width="45" height="45"/>
         <image name="record" width="33" height="33"/>
-        <image name="search" width="64" height="64"/>
+        <image name="search" width="45" height="45"/>
         <image name="sunshine" width="83" height="83"/>
     </resources>
 </document>
