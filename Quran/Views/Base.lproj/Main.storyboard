@@ -477,7 +477,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.88845366239547729" green="0.80328130722045898" blue="0.59200590848922729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" semanticContentAttribute="playback" barStyle="blackTranslucent" searchBarStyle="prominent" text="" placeholder="search for verse" backgroundImage="Bar" id="YS9-QX-4xm">
+                        <searchBar key="tableHeaderView" contentMode="redraw" semanticContentAttribute="playback" barStyle="blackTranslucent" searchBarStyle="prominent" text="" placeholder="search for verse" translucent="NO" backgroundImage="seaarch bar" id="YS9-QX-4xm">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -673,7 +673,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bar" width="318" height="50"/>
         <image name="asr" width="83" height="83"/>
         <image name="dhuhr" width="50" height="50"/>
         <image name="fajr" width="83" height="83"/>
@@ -681,9 +680,10 @@
         <image name="newQuranBackground" width="79" height="118"/>
         <image name="night" width="83" height="83"/>
         <image name="prayerTimes" width="21" height="21"/>
-        <image name="recitation" width="45" height="45"/>
+        <image name="recitation" width="21" height="21"/>
         <image name="record" width="33" height="33"/>
-        <image name="search" width="45" height="45"/>
+        <image name="seaarch bar" width="152" height="37"/>
+        <image name="search" width="21" height="21"/>
         <image name="sunshine" width="83" height="83"/>
     </resources>
 </document>
