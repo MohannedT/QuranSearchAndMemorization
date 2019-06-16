@@ -61,7 +61,13 @@ class PrayerTimesTableViewController: UITableViewController, CLLocationManagerDe
         alertController.addAction(saveAction)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (alertAction) in
-            self.fetchPrayTimesFromApiUsingLocation(long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, elevation: self.locationManager.location!.altitude)
+            if (self.locationManager.location != nil) {
+                self.fetchPrayTimesFromApiUsingLocation(long: self.locationManager.location!.coordinate.longitude, lat: self.locationManager.location!.coordinate.latitude, elevation: self.locationManager.location!.altitude)
+            }
+            else {
+                self.showAlertController(withTitle: "Can't get Mobile's Location", withMessage: "Application Can't get mobile's Location. Please check your Internet connection.")
+            }
+            
         }
             alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
@@ -126,7 +132,7 @@ class PrayerTimesTableViewController: UITableViewController, CLLocationManagerDe
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let currentLocation = locations.last
-        print(currentLocation!)
+        print("Current Location: \(currentLocation!)")
     }
 
 }
